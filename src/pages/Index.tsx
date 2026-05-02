@@ -1,16 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useReveal } from "@/hooks/useReveal";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { LogoMarquee } from "@/components/site/LogoMarquee";
+import { About } from "@/components/site/About";
+import { Services } from "@/components/site/Services";
+import { Courtroom } from "@/components/site/Courtroom";
+import { Lawyers } from "@/components/site/Lawyers";
+import { LegalCare } from "@/components/site/LegalCare";
+import { Advisory } from "@/components/site/Advisory";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Careers } from "@/components/site/Careers";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const scope = useReveal();
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div ref={scope} className="bg-bone text-ink min-h-screen overflow-x-hidden">
+      <Nav />
+      <main>
+        <Hero />
+        <LogoMarquee />
+        <About />
+        <Services />
+        <Courtroom />
+        <Lawyers />
+        <LegalCare />
+        <Advisory />
+        <Testimonials />
+        <Careers />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
