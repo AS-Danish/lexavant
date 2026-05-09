@@ -13,9 +13,8 @@ export const Footer = () => {
       <div className="container py-20">
         <div className="grid lg:grid-cols-12 gap-12 mb-20">
           <div className="lg:col-span-4">
-            <div className="flex items-baseline gap-1.5 mb-6">
-              <span className="font-serif text-3xl tracking-tight">Lexavant</span>
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            <div className="mb-6">
+              <img src={logo} alt="Lexavant — Law, Finance, Technology" className="h-14 w-auto object-contain invert brightness-0" style={{ filter: "invert(1) brightness(1.05)" }} />
             </div>
             <p className="text-bone/55 leading-relaxed max-w-sm">
               A premier law firm representing individuals and enterprises across litigation, corporate, advisory, and estate matters since 1986.
