@@ -1,10 +1,45 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/lexavant-logo.png";
 
-const cols = [
-  { h: "Practice", l: ["Litigation", "Corporate", "Financial Advisory", "Estate & Trust", "Real Estate", "Legal Care"] },
-  { h: "Firm", l: ["About", "Counsel", "Careers", "Press", "Pro Bono", "Diversity"] },
-  { h: "Insight", l: ["Journal", "Case Studies", "Whitepapers", "Briefings", "Podcast"] },
-  { h: "Offices", l: ["Boston", "New York", "Washington DC", "London"] },
+const cols: { h: string; l: { label: string; to: string }[] }[] = [
+  {
+    h: "Practice",
+    l: [
+      { label: "Litigation", to: "/services" },
+      { label: "Corporate", to: "/services" },
+      { label: "Financial Advisory", to: "/advisory" },
+      { label: "Estate & Trust", to: "/services" },
+      { label: "Real Estate", to: "/services" },
+      { label: "Legal Care", to: "/legal-care" },
+    ],
+  },
+  {
+    h: "Firm",
+    l: [
+      { label: "About", to: "/about" },
+      { label: "Counsel", to: "/counsel" },
+      { label: "Courtroom", to: "/courtroom" },
+      { label: "Careers", to: "/careers" },
+      { label: "Contact", to: "/contact" },
+    ],
+  },
+  {
+    h: "Insight",
+    l: [
+      { label: "Journal", to: "/journal" },
+      { label: "Briefings", to: "/journal" },
+      { label: "The Brief", to: "/#newsletter" },
+    ],
+  },
+  {
+    h: "Offices",
+    l: [
+      { label: "Boston", to: "/contact" },
+      { label: "New York", to: "/contact" },
+      { label: "Washington DC", to: "/contact" },
+      { label: "London", to: "/contact" },
+    ],
+  },
 ];
 
 export const Footer = () => {
