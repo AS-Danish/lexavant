@@ -54,12 +54,13 @@
     --sidebar-border: 0 0% 15%;
     --sidebar-ring: 44 53% 54%;
 
-    --gradient-gold: linear-gradient(135deg, hsl(38 55% 38%) 0%, hsl(44 53% 54%) 50%, hsl(44 65% 76%) 100%);
-    --gradient-noir: linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 0% 8%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 40% 36%) 0%, hsl(42 38% 52%) 50%, hsl(42 30% 72%) 100%);
+    --gradient-noir: linear-gradient(180deg, hsl(0 0% 6%) 0%, hsl(220 6% 12%) 100%);
+    --gradient-steel: linear-gradient(135deg, hsl(220 6% 22%) 0%, hsl(220 5% 38%) 50%, hsl(220 4% 62%) 100%);
     --gradient-vignette: radial-gradient(ellipse at center, transparent 40%, hsl(0 0% 0% / 0.6) 100%);
-    --shadow-gold: 0 20px 60px -20px hsl(44 53% 54% / 0.35);
+    --shadow-gold: 0 20px 60px -20px hsl(42 38% 52% / 0.3);
     --shadow-noir: 0 30px 80px -30px hsl(0 0% 0% / 0.6);
-    --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.06), 0 8px 24px -12px hsl(0 0% 0% / 0.12);
+    --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.06), 0 8px 24px -12px hsl(220 6% 20% / 0.14);
 
     --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
     --ease-firm: cubic-bezier(0.83, 0, 0.17, 1);
