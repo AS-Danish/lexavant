@@ -51,6 +51,7 @@ export default {
       backgroundImage: {
         "gradient-gold": "var(--gradient-gold)",
         "gradient-noir": "var(--gradient-noir)",
+        "gradient-steel": "var(--gradient-steel)",
         "gradient-vignette": "var(--gradient-vignette)",
       },
       boxShadow: {
