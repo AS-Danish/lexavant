@@ -8,16 +8,23 @@
 
 @layer base {
   :root {
-    --background: 40 20% 96%;
-    --foreground: 0 0% 5%;
+    --background: 30 8% 95%;
+    --foreground: 0 0% 8%;
 
-    --ink: 0 0% 5%;
-    --ink-soft: 0 0% 10%;
-    --bone: 40 20% 96%;
-    --bone-soft: 38 18% 92%;
-    --gold: 44 53% 54%;
-    --gold-soft: 44 65% 76%;
-    --gold-deep: 38 55% 38%;
+    --ink: 0 0% 6%;
+    --ink-soft: 0 0% 14%;
+    --bone: 30 8% 95%;
+    --bone-soft: 30 6% 91%;
+    --gold: 42 38% 52%;
+    --gold-soft: 42 30% 72%;
+    --gold-deep: 38 40% 36%;
+
+    /* Greyscale accents to match logo */
+    --graphite: 220 6% 22%;
+    --slate: 220 5% 38%;
+    --silver: 220 4% 62%;
+    --smoke: 220 6% 82%;
+    --mist: 220 8% 88%;
 
     --card: 40 20% 96%;
     --card-foreground: 0 0% 5%;
