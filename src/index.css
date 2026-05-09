@@ -99,9 +99,25 @@
   .bg-bone { background: hsl(var(--bone)); }
   .text-bone { color: hsl(var(--bone)); }
   .border-gold { border-color: hsl(var(--gold)); }
+  .text-graphite { color: hsl(var(--graphite)); }
+  .text-slate { color: hsl(var(--slate)); }
+  .text-silver { color: hsl(var(--silver)); }
+  .bg-graphite { background: hsl(var(--graphite)); }
+  .bg-slate { background: hsl(var(--slate)); }
+  .bg-silver { background: hsl(var(--silver)); }
+  .bg-smoke { background: hsl(var(--smoke)); }
+  .bg-mist { background: hsl(var(--mist)); }
+  .border-smoke { border-color: hsl(var(--smoke)); }
 
   .gradient-gold-text {
     background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-steel-text {
+    background: var(--gradient-steel);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
