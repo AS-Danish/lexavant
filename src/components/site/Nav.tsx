@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/lexavant-logo.png";
 
 const links = [
   { label: "Practice", href: "#services" },
