@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/lexavant-logo.png";
 
 const links = [
   { label: "Practice", href: "#services" },
@@ -28,9 +29,8 @@ export const Nav = () => {
       }`}
     >
       <nav className="container flex items-center justify-between py-5">
-        <a href="#top" className="flex items-baseline gap-1.5 group">
-          <span className="font-serif text-2xl tracking-tight text-ink">Lexavant</span>
-          <span className="h-1.5 w-1.5 rounded-full bg-gold transition-transform group-hover:scale-150" />
+        <a href="#top" className="flex items-center gap-2 group">
+          <img src={logo} alt="Lexavant" className="h-9 md:h-10 w-auto object-contain" />
         </a>
 
         <ul className="hidden md:flex items-center gap-9 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/70">

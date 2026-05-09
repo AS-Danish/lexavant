@@ -20,6 +20,11 @@ export default {
           soft: "hsl(var(--gold-soft))",
           deep: "hsl(var(--gold-deep))",
         },
+        graphite: "hsl(var(--graphite))",
+        slate: "hsl(var(--slate))",
+        silver: "hsl(var(--silver))",
+        smoke: "hsl(var(--smoke))",
+        mist: "hsl(var(--mist))",
         primary: { DEFAULT: "hsl(var(--primary))", foreground: "hsl(var(--primary-foreground))" },
         secondary: { DEFAULT: "hsl(var(--secondary))", foreground: "hsl(var(--secondary-foreground))" },
         destructive: { DEFAULT: "hsl(var(--destructive))", foreground: "hsl(var(--destructive-foreground))" },
@@ -46,6 +51,7 @@ export default {
       backgroundImage: {
         "gradient-gold": "var(--gradient-gold)",
         "gradient-noir": "var(--gradient-noir)",
+        "gradient-steel": "var(--gradient-steel)",
         "gradient-vignette": "var(--gradient-vignette)",
       },
       boxShadow: {
