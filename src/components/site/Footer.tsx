@@ -1,4 +1,4 @@
-const cols = [
+import logo from "@/assets/lexavant-logo.png";
   { h: "Practice", l: ["Litigation", "Corporate", "Financial Advisory", "Estate & Trust", "Real Estate", "Legal Care"] },
   { h: "Firm", l: ["About", "Counsel", "Careers", "Press", "Pro Bono", "Diversity"] },
   { h: "Insight", l: ["Journal", "Case Studies", "Whitepapers", "Briefings", "Podcast"] },
