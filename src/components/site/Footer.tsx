@@ -69,10 +69,10 @@ export const Footer = () => {
                 <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-5">{c.h}</div>
                 <ul className="space-y-3">
                   {c.l.map((it) => (
-                    <li key={it}>
-                      <a href="#" className="text-bone/70 hover:text-bone transition-colors text-sm">
-                        {it}
-                      </a>
+                    <li key={it.label}>
+                      <Link to={it.to} className="text-bone/70 hover:text-bone transition-colors text-sm">
+                        {it.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
