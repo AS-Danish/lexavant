@@ -1,10 +1,45 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/lexavant-logo.png";
 
-const cols = [
-  { h: "Practice", l: ["Litigation", "Corporate", "Financial Advisory", "Estate & Trust", "Real Estate", "Legal Care"] },
-  { h: "Firm", l: ["About", "Counsel", "Careers", "Press", "Pro Bono", "Diversity"] },
-  { h: "Insight", l: ["Journal", "Case Studies", "Whitepapers", "Briefings", "Podcast"] },
-  { h: "Offices", l: ["Boston", "New York", "Washington DC", "London"] },
+const cols: { h: string; l: { label: string; to: string }[] }[] = [
+  {
+    h: "Practice",
+    l: [
+      { label: "Litigation", to: "/services" },
+      { label: "Corporate", to: "/services" },
+      { label: "Financial Advisory", to: "/advisory" },
+      { label: "Estate & Trust", to: "/services" },
+      { label: "Real Estate", to: "/services" },
+      { label: "Legal Care", to: "/legal-care" },
+    ],
+  },
+  {
+    h: "Firm",
+    l: [
+      { label: "About", to: "/about" },
+      { label: "Counsel", to: "/counsel" },
+      { label: "Courtroom", to: "/courtroom" },
+      { label: "Careers", to: "/careers" },
+      { label: "Contact", to: "/contact" },
+    ],
+  },
+  {
+    h: "Insight",
+    l: [
+      { label: "Journal", to: "/journal" },
+      { label: "Briefings", to: "/journal" },
+      { label: "The Brief", to: "/#newsletter" },
+    ],
+  },
+  {
+    h: "Offices",
+    l: [
+      { label: "Boston", to: "/contact" },
+      { label: "New York", to: "/contact" },
+      { label: "Washington DC", to: "/contact" },
+      { label: "London", to: "/contact" },
+    ],
+  },
 ];
 
 export const Footer = () => {
@@ -34,10 +69,10 @@ export const Footer = () => {
                 <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-5">{c.h}</div>
                 <ul className="space-y-3">
                   {c.l.map((it) => (
-                    <li key={it}>
-                      <a href="#" className="text-bone/70 hover:text-bone transition-colors text-sm">
-                        {it}
-                      </a>
+                    <li key={it.label}>
+                      <Link to={it.to} className="text-bone/70 hover:text-bone transition-colors text-sm">
+                        {it.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
