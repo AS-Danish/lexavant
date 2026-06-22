@@ -1,12 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const services = [
-  { n: "01", title: "Litigation & Trial", desc: "Complex civil and criminal trial work across federal and state forums. We try cases — and win them.", tags: ["Federal Trial", "Class Action", "Appellate"] },
-  { n: "02", title: "Corporate & M&A", desc: "Sophisticated counsel for mergers, acquisitions, joint ventures, and cross-border transactions.", tags: ["M&A", "Securities", "Governance"] },
-  { n: "03", title: "Financial Advisory", desc: "Strategic guidance for funds, family offices, and institutions navigating regulatory complexity.", tags: ["Funds", "Compliance", "SEC"] },
-  { n: "04", title: "Estate & Trust", desc: "Generational wealth planning, fiduciary administration, and contested estate litigation.", tags: ["Trusts", "Probate", "Tax"] },
-  { n: "05", title: "Real Estate", desc: "From single transactions to portfolio-scale developments across commercial and residential markets.", tags: ["Acquisitions", "Leasing", "Development"] },
-  { n: "06", title: "Legal Care", desc: "Discreet personal counsel for individuals — family, immigration, employment, and private matters.", tags: ["Family", "Immigration", "Employment"] },
+  { n: "01", title: "Litigation & Dispute Resolution", desc: "Constitutional, commercial, and regulatory disputes before the Supreme Court, High Courts, and specialised tribunals.", tags: ["Constitutional", "Commercial", "Arbitration"], to: "/practice-areas/litigation-and-dispute-resolution" },
+  { n: "02", title: "Corporate, M&A, Private Client & Securities", desc: "Sophisticated counsel for mergers, acquisitions, joint ventures, and cross-border transactions alongside trusted private-client advisory.", tags: ["M&A", "Securities", "Private Client"], to: "/practice-areas/corporate-ma-private-client-securities-law" },
+  { n: "03", title: "Technology, Media, Entertainment & Gaming", desc: "Integrated legal solutions for stakeholders operating at the intersection of innovation, content, and digital ecosystems.", tags: ["TMT", "Gaming", "IP"], to: "/practice-areas/technology-media-entertainment-gaming" },
+  { n: "04", title: "Data Privacy", desc: "Advising clients on navigating complex data protection frameworks and maintaining regulatory compliance.", tags: ["Privacy", "DPDP", "Compliance"], to: "/practice-areas/data-privacy" },
 ];
 
 export const Services = () => {
@@ -21,13 +20,12 @@ export const Services = () => {
               <span className="h-px w-8 bg-gold" /> 02 — Practice Areas
             </div>
             <h2 className="font-serif text-4xl md:text-6xl leading-[1.05]" data-reveal>
-              Six disciplines.
-              <span className="italic text-gold"> One standard.</span>
+              What We Do.
+              <span className="italic text-gold"> Deliberately broad.</span>
             </h2>
           </div>
           <p className="lg:col-span-5 text-bone/65 leading-relaxed" data-reveal>
-            Each practice group is led by a senior partner with at least two decades in their specialty. Our cross-disciplinary
-            approach means your matter is never seen through a single lens.
+            Below is an overview of the principal areas in which we advise. Our cross-disciplinary approach means your matter is never seen through a single lens.
           </p>
         </div>
 
@@ -40,9 +38,9 @@ export const Services = () => {
               onMouseLeave={() => setActive(null)}
               className="group relative border-b border-bone/15 transition-colors duration-500 hover:bg-bone/[0.03]"
             >
-              <a href="#contact" className="grid grid-cols-12 gap-6 items-center py-8 md:py-10 px-2">
+              <Link to={s.to} className="grid grid-cols-12 gap-6 items-center py-8 md:py-10 px-2">
                 <span className="col-span-2 md:col-span-1 font-mono text-xs text-gold tracking-widest">{s.n}</span>
-                <h3 className="col-span-10 md:col-span-4 font-serif text-2xl md:text-4xl tracking-tight transition-transform duration-500 group-hover:translate-x-3">
+                <h3 className="col-span-10 md:col-span-4 font-serif text-2xl md:text-3xl tracking-tight transition-transform duration-500 group-hover:translate-x-3">
                   {s.title}
                 </h3>
                 <p className="hidden md:block col-span-4 text-bone/60 text-sm leading-relaxed">{s.desc}</p>
@@ -56,7 +54,7 @@ export const Services = () => {
                 <span className="col-span-12 md:col-span-1 justify-self-end text-gold transition-transform duration-500 group-hover:rotate-45">
                   ↗
                 </span>
-              </a>
+              </Link>
 
               {/* Gold reveal bar */}
               <span

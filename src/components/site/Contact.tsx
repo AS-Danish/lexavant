@@ -12,7 +12,7 @@ export const Contact = () => {
       setSending(false);
       toast({
         title: "Inquiry received.",
-        description: "A partner will contact you within one business day.",
+        description: "Our team will review and respond within two business days.",
       });
       (e.target as HTMLFormElement).reset();
     }, 900);
@@ -24,78 +24,94 @@ export const Contact = () => {
       <div className="container relative grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-bone/50 mb-6" data-reveal>
-            <span className="h-px w-8 bg-gold" /> 09 — Retain Counsel
+            <span className="h-px w-8 bg-gold" /> Contact Us
           </div>
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05]" data-reveal>
-            Begin with a
-            <span className="italic gradient-gold-text"> conversation.</span>
+          <h2 className="font-serif text-4xl md:text-5xl leading-[1.05]" data-reveal>
+            We are available to speak.
           </h2>
           <p className="mt-8 text-bone/65 leading-relaxed max-w-md" data-reveal>
-            All initial consultations are confidential and complimentary. We respond to every inquiry personally, within
-            one business day.
+            Whether you have an active matter, a question about our practice, or are exploring a long-term advisory relationship, we are available to speak with prospective and existing clients, referral counsel, and professional intermediaries.
           </p>
 
           <dl className="mt-12 space-y-6" data-stagger>
-            {[
-              { k: "Boston HQ", v: "100 Federal Street, Suite 4100" },
-              { k: "Direct", v: "+1 (617) 555 — 0142" },
-              { k: "Confidential", v: "counsel@lexavant.law" },
-              { k: "Hours", v: "Mon — Fri · 08:00 — 19:00 ET" },
-            ].map((d) => (
-              <div key={d.k} data-stagger-item className="flex items-baseline gap-6 border-t border-bone/15 pt-4">
-                <dt className="w-28 shrink-0 font-mono text-[10px] uppercase tracking-[0.25em] text-gold">{d.k}</dt>
-                <dd className="font-serif text-lg">{d.v}</dd>
+            <div data-stagger-item className="border-t border-bone/15 pt-4">
+              <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-2">Mumbai - Principal Office</dt>
+              <dd className="font-serif text-lg leading-snug">
+                Lexavant LLP<br />
+                Office No. 306, Marine Chambers,<br />
+                New Marine Lines,<br />
+                Mumbai - 400020
+              </dd>
+              <dd className="font-mono text-sm mt-3 text-bone/70">+91 7774089444 | +44 7867222719</dd>
+              <dd className="font-mono text-sm mt-1 text-bone/70">advchaitanya@lexavant.com</dd>
+            </div>
+            
+            <div data-stagger-item className="grid grid-cols-3 gap-4 border-t border-bone/15 pt-4">
+              <div>
+                <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-1">London</dt>
+                <dd className="text-sm text-bone/60">[Address]</dd>
               </div>
-            ))}
+              <div>
+                <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-1">Delhi</dt>
+                <dd className="text-sm text-bone/60">[Address]</dd>
+              </div>
+              <div>
+                <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-1">Aurangabad</dt>
+                <dd className="text-sm text-bone/60">[Address]</dd>
+              </div>
+            </div>
           </dl>
         </div>
 
         <form onSubmit={onSubmit} className="lg:col-span-6 lg:col-start-7 space-y-8" data-reveal>
-          {[
-            { id: "name", label: "Full Name", type: "text" },
-            { id: "email", label: "Email Address", type: "email" },
-            { id: "phone", label: "Telephone", type: "tel" },
-            { id: "matter", label: "Nature of Matter", type: "text" },
-          ].map((f) => (
-            <div key={f.id} className="group">
-              <label htmlFor={f.id} className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">
-                {f.label}
-              </label>
-              <input
-                required
-                id={f.id}
-                name={f.id}
-                type={f.type}
-                className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 font-serif text-lg"
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="group">
+              <label htmlFor="name" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Full Name</label>
+              <input required id="name" name="name" type="text" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 font-serif text-lg" />
             </div>
-          ))}
-
-          <div>
-            <label htmlFor="msg" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">
-              Brief Description
-            </label>
-            <textarea
-              id="msg"
-              name="msg"
-              rows={4}
-              className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 resize-none"
-            />
+            <div className="group">
+              <label htmlFor="organisation" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Organisation (Optional)</label>
+              <input id="organisation" name="organisation" type="text" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 font-serif text-lg" />
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="group">
+              <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Email Address</label>
+              <input required id="email" name="email" type="email" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 font-serif text-lg" />
+            </div>
+            <div className="group">
+              <label htmlFor="phone" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Phone Number</label>
+              <input required id="phone" name="phone" type="tel" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 font-serif text-lg" />
+            </div>
           </div>
 
-          <button
-            type="submit"
-            disabled={sending}
-            className="group w-full md:w-auto inline-flex items-center justify-center gap-3 bg-gold text-ink rounded-full pl-8 pr-3 py-3 font-mono text-xs uppercase tracking-[0.2em] hover:bg-bone transition-all duration-500 disabled:opacity-60"
-          >
-            {sending ? "Submitting…" : "Submit Inquiry"}
-            <span className="grid place-items-center h-9 w-9 rounded-full bg-ink text-gold transition-transform group-hover:rotate-45">
-              ↗
-            </span>
+          <div className="group">
+            <label htmlFor="enquiry" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Nature of Enquiry</label>
+            <select required id="enquiry" name="enquiry" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone outline-none transition-colors duration-500 font-serif text-lg appearance-none cursor-pointer">
+              <option value="" disabled selected className="text-ink">Select an option</option>
+              <option value="General Enquiry" className="text-ink">General Enquiry</option>
+              <option value="Litigation & Disputes" className="text-ink">Litigation & Disputes</option>
+              <option value="Corporate & M&A" className="text-ink">Corporate & M&A</option>
+              <option value="TMEG" className="text-ink">Technology, Media, Entertainment & Gaming</option>
+              <option value="Private Client" className="text-ink">Private Client</option>
+              <option value="Banking & Finance" className="text-ink">Banking & Finance</option>
+              <option value="Others" className="text-ink">Others</option>
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="msg" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Brief Description of Matter</label>
+            <textarea required id="msg" name="msg" rows={4} className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 resize-none font-serif text-lg" />
+          </div>
+
+          <button type="submit" disabled={sending} className="group w-full md:w-auto inline-flex items-center justify-center gap-3 bg-gold text-ink rounded-full pl-8 pr-3 py-3 font-mono text-xs uppercase tracking-[0.2em] hover:bg-bone transition-all duration-500 disabled:opacity-60">
+            {sending ? "Submitting…" : "Submit Enquiry"}
+            <span className="grid place-items-center h-9 w-9 rounded-full bg-ink text-gold transition-transform group-hover:rotate-45">↗</span>
           </button>
 
-          <p className="text-bone/40 text-xs leading-relaxed font-mono">
-            By submitting, you acknowledge that no attorney-client relationship is formed until a written engagement is executed.
+          <p className="text-bone/40 text-[11px] leading-relaxed font-mono">
+            Submission of this form does not create a lawyer–client relationship. All information shared will be treated with discretion and reviewed by our team within two business days.
           </p>
         </form>
       </div>

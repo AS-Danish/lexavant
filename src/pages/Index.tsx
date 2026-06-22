@@ -1,15 +1,7 @@
 import { useReveal } from "@/hooks/useReveal";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
-import { LogoMarquee } from "@/components/site/LogoMarquee";
-import { About } from "@/components/site/About";
 import { Services } from "@/components/site/Services";
-import { Courtroom } from "@/components/site/Courtroom";
-import { Lawyers } from "@/components/site/Lawyers";
-import { LegalCare } from "@/components/site/LegalCare";
-import { Advisory } from "@/components/site/Advisory";
-import { Testimonials } from "@/components/site/Testimonials";
-import { Careers } from "@/components/site/Careers";
 import { Newsletter } from "@/components/site/Newsletter";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
@@ -22,15 +14,17 @@ const Index = () => {
       <Nav />
       <main>
         <Hero />
-        <LogoMarquee />
-        <About />
         <Services />
-        <Courtroom />
-        <Lawyers />
-        <LegalCare />
-        <Advisory />
-        <Testimonials />
-        <Careers />
+        
+        {/* Ethos Statement Section */}
+        <section className="bg-ink text-bone py-24 border-y border-bone/10">
+          <div className="container text-center">
+            <h2 className="font-serif text-3xl md:text-5xl max-w-4xl mx-auto leading-[1.2] italic gradient-gold-text">
+              “Built on foresight, strategy, precision, and an uncompromising standard of counsel.”
+            </h2>
+          </div>
+        </section>
+
         <Newsletter />
         <Contact />
       </main>

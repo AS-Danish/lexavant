@@ -34,43 +34,43 @@ export const Hero = () => {
         <div className="lg:col-span-7 relative z-10">
           <div className="hero-eyebrow flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60 mb-8">
             <span className="h-px w-10 bg-gold" />
-            Est. 1986 — Counsel of Consequence
+            Lexavant LLP — Counsel of Consequence
           </div>
 
           <h1 className="font-serif text-[12vw] md:text-[7.5vw] lg:text-[6.4vw] leading-[0.95] tracking-[-0.02em] text-ink">
-            <span className="block reveal-line"><span className="hero-line">Justice,</span></span>
-            <span className="block reveal-line"><span className="hero-line italic gradient-gold-text">deliberately</span></span>
-            <span className="block reveal-line"><span className="hero-line">delivered.</span></span>
+            <span className="block reveal-line"><span className="hero-line">Foresight,</span></span>
+            <span className="block reveal-line"><span className="hero-line italic gradient-gold-text">strategy,</span></span>
+            <span className="block reveal-line"><span className="hero-line">precision.</span></span>
           </h1>
 
           <p className="hero-sub mt-8 max-w-md text-ink/70 text-base md:text-lg leading-relaxed">
-            For nearly four decades, Lexavant has represented founders, families, and Fortune 500s in matters that demand
-            quiet conviction and decisive force.
+            Built on an uncompromising standard of counsel. Lexavant LLP is a full-service law firm combining decades of courtroom experience with a rigorous understanding of modern commercial and regulatory frameworks.
           </p>
 
           <div className="hero-cta mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="#contact"
-              className="group inline-flex items-center gap-3 bg-ink text-bone rounded-full pl-6 pr-2 py-2 font-mono text-xs uppercase tracking-[0.18em] hover:bg-gold hover:text-ink transition-all duration-500"
+              href="/contact"
+              className="group inline-flex items-center gap-3 bg-ink text-bone rounded-full pl-6 pr-2 py-2 font-mono text-xs uppercase tracking-[0.18em] hover:bg-gold hover:text-ink transition-colors duration-500"
             >
-              Schedule Consultation
+              Contact Our Team
               <span className="grid place-items-center h-9 w-9 rounded-full bg-gold text-ink transition-transform group-hover:rotate-45">
                 <ArrowDown size={14} className="-rotate-45" />
               </span>
             </a>
-            <a href="#services" className="font-mono text-xs uppercase tracking-[0.18em] text-ink/70 hover:text-ink underline-offset-8 hover:underline">
-              Explore Practice →
+            <a href="/about" className="font-mono text-xs uppercase tracking-[0.18em] text-ink/70 hover:text-ink underline-offset-8 hover:underline">
+              Learn More About Us →
             </a>
           </div>
 
-          <div className="hero-meta mt-16 grid grid-cols-3 gap-6 max-w-xl">
+          <div className="hero-meta mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
             {[
-              { k: "39", l: "Years Practising" },
-              { k: "$2.4B", l: "Recovered Verdicts" },
-              { k: "98%", l: "Client Retention" },
+              { k: "20+", l: "Years at the Bar" },
+              { k: "60+", l: "Reported Judgments" },
+              { k: "4", l: "Offices across India & the UK" },
+              { k: "Global", l: "Multi-Jurisdictional Reach" },
             ].map((s) => (
               <div key={s.l} className="border-t border-ink/15 pt-4">
-                <div className="font-serif text-3xl md:text-4xl text-ink">{s.k}</div>
+                <div className="font-serif text-2xl md:text-3xl text-ink">{s.k}</div>
                 <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60">{s.l}</div>
               </div>
             ))}
@@ -99,17 +99,13 @@ export const Hero = () => {
 
           <div className="absolute -top-6 -left-6 hidden lg:block">
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40 [writing-mode:vertical-rl] rotate-180">
-              Lex · Avant · Garde
+              Multi-Jurisdictional Reach
             </span>
           </div>
         </div>
       </div>
 
-      {/* Scroll cue */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-ink/40 font-mono text-[10px] uppercase tracking-[0.3em]">
-        Scroll
-        <span className="h-10 w-px bg-ink/30 animate-pulse" />
-      </div>
+
     </section>
   );
 };

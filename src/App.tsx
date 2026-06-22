@@ -3,17 +3,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+
+import { DisclaimerModal } from "@/components/site/DisclaimerModal";
+
 import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
-import Services from "./pages/Services.tsx";
-import Counsel from "./pages/Counsel.tsx";
 import Careers from "./pages/Careers.tsx";
 import Contact from "./pages/Contact.tsx";
-import Advisory from "./pages/Advisory.tsx";
-import LegalCare from "./pages/LegalCare.tsx";
-import Courtroom from "./pages/Courtroom.tsx";
-import Journal from "./pages/Journal.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Litigation from "./pages/Litigation.tsx";
+import Corporate from "./pages/Corporate.tsx";
+import TechnologyMedia from "./pages/TechnologyMedia.tsx";
+import DataPrivacy from "./pages/DataPrivacy.tsx";
+import KnowledgeHub from "./pages/KnowledgeHub.tsx";
+import Team from "./pages/Team.tsx";
 
 const queryClient = new QueryClient();
 
@@ -22,19 +25,19 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <DisclaimerModal />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/counsel" element={<Counsel />} />
-          <Route path="/courtroom" element={<Courtroom />} />
-          <Route path="/advisory" element={<Advisory />} />
-          <Route path="/legal-care" element={<LegalCare />} />
+          <Route path="/practice-areas/litigation-and-dispute-resolution" element={<Litigation />} />
+          <Route path="/practice-areas/corporate-ma-private-client-securities-law" element={<Corporate />} />
+          <Route path="/practice-areas/technology-media-entertainment-gaming" element={<TechnologyMedia />} />
+          <Route path="/practice-areas/data-privacy" element={<DataPrivacy />} />
+          <Route path="/knowledge-hub" element={<KnowledgeHub />} />
           <Route path="/careers" element={<Careers />} />
-          <Route path="/journal" element={<Journal />} />
           <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/team" element={<Team />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
