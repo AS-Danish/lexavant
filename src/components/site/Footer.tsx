@@ -44,7 +44,7 @@ export const Footer = () => {
         <div className="grid lg:grid-cols-12 gap-12 mb-20">
           <div className="lg:col-span-4">
             <div className="mb-6">
-              <img src={logo} alt="Lexavant — Law, Finance, Technology" className="h-14 w-auto object-contain invert brightness-0" style={{ filter: "invert(1) brightness(1.05)" }} />
+              <img src={logo} alt="Lexavant — Law, Finance, Technology" className="h-24 md:h-32 w-auto object-contain invert brightness-0" style={{ filter: "invert(1) brightness(1.05)" }} />
             </div>
             <p className="text-bone/55 leading-relaxed max-w-sm">
               Law · Finance · Technology

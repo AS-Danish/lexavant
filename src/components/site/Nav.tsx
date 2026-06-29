@@ -57,7 +57,7 @@ export const Nav = () => {
       <nav className="container flex items-center py-5 relative">
         <div className="flex-1">
           <Link to="/" className="inline-flex items-center gap-2 group">
-            <img src={logo} alt="Lexavant" className="h-9 md:h-10 w-auto object-contain" />
+            <img src={logo} alt="Lexavant" className="h-16 md:h-20 w-auto object-contain scale-110 origin-left" />
           </Link>
         </div>
 
