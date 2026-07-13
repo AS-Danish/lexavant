@@ -8,17 +8,45 @@ export const Hero = () => {
   const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
-      tl.from(".hero-eyebrow", { y: 20, opacity: 0, duration: 1 })
-        .from(".hero-line", { y: 40, opacity: 0, duration: 1.2, stagger: 0.12 }, "-=0.7")
-        .from(".hero-sub", { y: 30, opacity: 0, duration: 1, stagger: 0.15 }, "-=0.8")
-        .from(".hero-cta > *", { y: 20, opacity: 0, duration: 0.8, stagger: 0.1 }, "-=0.6")
-        .from(".hero-meta", { opacity: 0, duration: 1 }, "-=0.6")
-        .from(".hero-img", { scale: 1.15, opacity: 0, duration: 1.6, ease: "expo.out" }, 0.2)
-        .from(".hero-watermark", { opacity: 0, x: -40, duration: 2, ease: "power2.out" }, 0.4);
-    }, root);
-    return () => ctx.revert();
+    let ctx: gsap.Context;
+
+    const initHeroAnimation = () => {
+      ctx = gsap.context(() => {
+        const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
+        
+        // Left content slides in from left
+        tl.fromTo(".hero-left-content", 
+          { x: -200, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1.6, ease: "power3.out" }
+        )
+          .fromTo(".hero-eyebrow", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, "-=1.2")
+          .fromTo(".hero-line", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, stagger: 0.12 }, "-=1.0")
+          .fromTo(".hero-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.15 }, "-=0.8")
+          .fromTo(".hero-cta > *", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.1 }, "-=0.6")
+          .fromTo(".hero-meta", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=0.6")
+          // Right image slides in from far right
+          .fromTo(".hero-right-content", 
+            { x: 200, opacity: 0 },
+            { x: 0, opacity: 1, duration: 1.6, ease: "power3.out" }, 
+            0.1
+          )
+          .fromTo(".hero-img", { scale: 1.15, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.6, ease: "expo.out" }, 0.4)
+          .fromTo(".hero-watermark", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 2, ease: "power2.out" }, 0.4);
+      }, root);
+    };
+
+    if (document.body.classList.contains("reveal-finished")) {
+      initHeroAnimation();
+    } else {
+      // Hide initially to prevent FOUC before animation
+      gsap.set(".hero-left-content, .hero-right-content", { opacity: 0 });
+      window.addEventListener("reveal-finished", initHeroAnimation, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener("reveal-finished", initHeroAnimation);
+      if (ctx) ctx.revert();
+    };
   }, []);
 
   return (
@@ -32,7 +60,7 @@ export const Hero = () => {
       </div>
 
       <div className="container relative grid lg:grid-cols-12 gap-10 items-center">
-        <div className="lg:col-span-7 relative z-10">
+        <div className="hero-left-content lg:col-span-7 relative z-10">
           <div className="hero-eyebrow flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60 mb-8">
             <span className="h-px w-10 bg-gold" />
             Lexavant LLP
@@ -82,7 +110,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-5 relative">
+        <div className="hero-right-content lg:col-span-5 relative">
           <div className="hero-img relative aspect-[3/4] overflow-hidden rounded-sm shadow-noir">
             <img
               src={ladyJustice}
@@ -90,7 +118,6 @@ export const Hero = () => {
               width={1080}
               height={1440}
               className="h-full w-full object-cover"
-              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-vignette" />
           </div>

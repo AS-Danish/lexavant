@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { gsap } from "gsap";
 import logo from "@/assets/lexavant-logo.png";
 
 const regularLinks = [
@@ -30,6 +31,31 @@ export const Nav = () => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    
+    // Entrance animation
+    const initNavAnimation = () => {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        ".nav-logo-container",
+        { y: -150 },
+        { y: 0, duration: 0.6, ease: "expo.out" }
+      )
+      .fromTo(
+        ".nav-links li, .nav-mobile-btn",
+        { y: -100 },
+        { y: 0, duration: 0.6, stagger: 0.05, ease: "back.out(1.2)" },
+        "-=0.3"
+      );
+    };
+
+    if (document.body.classList.contains("reveal-finished")) {
+      initNavAnimation();
+    } else {
+      gsap.set(".nav-logo-container", { y: -150 });
+      gsap.set(".nav-links li, .nav-mobile-btn", { y: -100 });
+      window.addEventListener("reveal-finished", initNavAnimation, { once: true });
+    }
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -55,13 +81,13 @@ export const Nav = () => {
       }`}
     >
       <nav className="container flex items-center py-5 relative">
-        <div className="flex-1">
+        <div className="flex-1 nav-logo-container">
           <Link to="/" className="inline-flex items-center gap-2 group">
             <img src={logo} alt="Lexavant" className="h-16 md:h-20 w-auto object-contain scale-110 origin-left" />
           </Link>
         </div>
 
-        <ul className="hidden md:flex items-center justify-center gap-8 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/70">
+        <ul className="hidden md:flex nav-links items-center justify-center gap-8 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/70">
           {regularLinks.map((l) => (
             <li key={l.to}>
               <NavLink l={l} />
@@ -94,7 +120,7 @@ export const Nav = () => {
           ))}
         </ul>
 
-        <div className="flex-1 flex justify-end">
+        <div className="flex-1 flex justify-end nav-mobile-btn">
           <button aria-label="Menu" onClick={() => setOpen((o) => !o)} className="md:hidden text-ink">
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>

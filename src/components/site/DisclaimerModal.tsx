@@ -16,7 +16,11 @@ export function DisclaimerModal() {
   useEffect(() => {
     const hasAgreed = localStorage.getItem("lexavant_disclaimer_agreed");
     if (!hasAgreed) {
-      setOpen(true);
+      if (document.body.classList.contains("reveal-finished")) {
+        setOpen(true);
+      } else {
+        window.addEventListener("reveal-finished", () => setOpen(true), { once: true });
+      }
     }
   }, []);
 

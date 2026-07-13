@@ -88,8 +88,8 @@ export const Contact = () => {
 
           <div className="group">
             <label htmlFor="enquiry" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Nature of Enquiry</label>
-            <select required id="enquiry" name="enquiry" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone outline-none transition-colors duration-500 font-serif text-lg appearance-none cursor-pointer">
-              <option value="" disabled selected className="text-ink">Select an option</option>
+            <select required id="enquiry" name="enquiry" defaultValue="" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone outline-none transition-colors duration-500 font-serif text-lg appearance-none cursor-pointer">
+              <option value="" disabled className="text-ink">Select an option</option>
               <option value="General Enquiry" className="text-ink">General Enquiry</option>
               <option value="Litigation & Disputes" className="text-ink">Litigation & Disputes</option>
               <option value="Corporate & M&A" className="text-ink">Corporate & M&A</option>

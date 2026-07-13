@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import { DisclaimerModal } from "@/components/site/DisclaimerModal";
+import { PageReveal } from "@/components/PageReveal";
 
 import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
@@ -23,10 +24,11 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <PageReveal />
       <Toaster />
       <Sonner />
       <DisclaimerModal />
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
