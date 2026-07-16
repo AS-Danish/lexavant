@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/lexavant-logo.png";
+import { Skyline } from "@/components/site/Skyline";
 
 const cols: { h: string; l: { label: string; to: string }[] }[] = [
   {
@@ -82,10 +83,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Mega wordmark */}
-        <div aria-hidden className="font-serif italic text-[24vw] leading-[0.85] tracking-[-0.04em] gradient-gold-text opacity-90 select-none -mb-4">
-          lexavant
-        </div>
+        <Skyline />
 
         <div className="hairline-gold pt-6 flex flex-col md:flex-row justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-bone/45">
           <span>© 2026 Lexavant LLP · All rights reserved.</span>

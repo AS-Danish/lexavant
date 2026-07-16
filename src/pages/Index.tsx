@@ -10,7 +10,7 @@ const Index = () => {
   const scope = useReveal();
 
   return (
-    <div ref={scope} className="bg-bone text-ink min-h-screen overflow-x-hidden">
+    <div ref={scope} className="bg-ink text-bone min-h-screen overflow-x-hidden">
       <Nav />
       <main>
         <Hero />

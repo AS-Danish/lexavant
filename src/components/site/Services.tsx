@@ -1,71 +1,118 @@
-import { useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ReactLenis } from "lenis/react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 const services = [
   { n: "01", title: "Litigation & Dispute Resolution", desc: "Constitutional, commercial, and regulatory disputes before the Supreme Court, High Courts, and specialised tribunals.", tags: ["Constitutional", "Commercial", "Arbitration"], to: "/practice-areas/litigation-and-dispute-resolution" },
-  { n: "02", title: "Corporate, M&A, Private Client & Securities", desc: "Sophisticated counsel for mergers, acquisitions, joint ventures, and cross-border transactions alongside trusted private-client advisory.", tags: ["M&A", "Securities", "Private Client"], to: "/practice-areas/corporate-ma-private-client-securities-law" },
-  { n: "03", title: "Technology, Media, Entertainment & Gaming", desc: "Integrated legal solutions for stakeholders operating at the intersection of innovation, content, and digital ecosystems.", tags: ["TMT", "Gaming", "IP"], to: "/practice-areas/technology-media-entertainment-gaming" },
+  { n: "02", title: "Corporate, M&A & Private Client", desc: "Sophisticated counsel for mergers, acquisitions, joint ventures, and cross-border transactions alongside trusted private-client advisory.", tags: ["M&A", "Securities", "Private Client"], to: "/practice-areas/corporate-ma-private-client-securities-law" },
+  { n: "03", title: "Technology, Media & Gaming", desc: "Integrated legal solutions for stakeholders operating at the intersection of innovation, content, and digital ecosystems.", tags: ["TMT", "Gaming", "IP"], to: "/practice-areas/technology-media-entertainment-gaming" },
   { n: "04", title: "Data Privacy", desc: "Advising clients on navigating complex data protection frameworks and maintaining regulatory compliance.", tags: ["Privacy", "DPDP", "Compliance"], to: "/practice-areas/data-privacy" },
 ];
 
-export const Services = () => {
-  const [active, setActive] = useState<number | null>(null);
+const StickyCard_001 = ({
+  i,
+  n,
+  title,
+  desc,
+  tags,
+  to,
+  progress,
+  range,
+  targetScale,
+}: {
+  i: number;
+  n: string;
+  title: string;
+  desc: string;
+  tags: string[];
+  to: string;
+  progress: any;
+  range: [number, number];
+  targetScale: number;
+}) => {
+  const container = useRef<HTMLDivElement>(null);
+
+  const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <section id="services" className="relative bg-ink text-bone py-28 md:py-40 overflow-hidden grain">
-      <div className="container">
-        <div className="grid lg:grid-cols-12 gap-10 items-end mb-20">
-          <div className="lg:col-span-7">
-            <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-bone/50 mb-6" data-reveal>
-              <span className="h-px w-8 bg-gold" /> 02 — Practice Areas
-            </div>
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05]" data-reveal>
-              What We Do.
-              <span className="italic text-gold"> Deliberately broad.</span>
-            </h2>
-          </div>
-          <p className="lg:col-span-5 text-bone/65 leading-relaxed" data-reveal>
-            Below is an overview of the principal areas in which we advise. Our cross-disciplinary approach means your matter is never seen through a single lens.
-          </p>
-        </div>
-
-        <ul className="border-t border-bone/15" data-stagger>
-          {services.map((s, i) => (
-            <li
-              key={s.n}
-              data-stagger-item
-              onMouseEnter={() => setActive(i)}
-              onMouseLeave={() => setActive(null)}
-              className="group relative border-b border-bone/15 transition-colors duration-500 hover:bg-bone/[0.03]"
-            >
-              <Link to={s.to} className="grid grid-cols-12 gap-6 items-center py-8 md:py-10 px-2">
-                <span className="col-span-2 md:col-span-1 font-mono text-xs text-gold tracking-widest">{s.n}</span>
-                <h3 className="col-span-10 md:col-span-4 font-serif text-2xl md:text-3xl tracking-tight transition-transform duration-500 group-hover:translate-x-3">
-                  {s.title}
-                </h3>
-                <p className="hidden md:block col-span-4 text-bone/60 text-sm leading-relaxed">{s.desc}</p>
-                <div className="hidden md:flex col-span-2 flex-wrap gap-1.5 justify-end">
-                  {s.tags.map((t) => (
-                    <span key={t} className="font-mono text-[10px] uppercase tracking-wider text-bone/50 border border-bone/20 rounded-full px-2.5 py-1">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <span className="col-span-12 md:col-span-1 justify-self-end text-gold transition-transform duration-500 group-hover:rotate-45">
-                  ↗
+    <div
+      ref={container}
+      className="sticky top-0 flex items-center justify-center w-full"
+    >
+      <motion.div
+        style={{
+          scale,
+          top: `calc(-5vh + ${i * 20 + 250}px)`,
+        }}
+        className="rounded-[2rem] relative -top-1/4 flex w-full max-w-6xl origin-top flex-col overflow-hidden bg-ink border border-bone/15 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:bg-[#0c0c0c]"
+      >
+        <Link to={to} className="w-full block group relative px-6 py-10 md:px-12 md:py-14">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start md:items-center">
+            <span className="md:col-span-1 font-mono text-xs text-gold tracking-widest">{n}</span>
+            <h3 className="md:col-span-4 font-serif text-2xl md:text-3xl tracking-tight transition-transform duration-500 group-hover:translate-x-3 text-bone">
+              {title}
+            </h3>
+            <p className="md:col-span-4 text-bone/60 text-sm leading-relaxed">{desc}</p>
+            <div className="hidden md:flex md:col-span-2 flex-wrap gap-1.5 justify-end">
+              {tags.map((t: string) => (
+                <span key={t} className="font-mono text-[10px] uppercase tracking-wider text-bone/50 border border-bone/20 rounded-full px-2.5 py-1">
+                  {t}
                 </span>
-              </Link>
+              ))}
+            </div>
+            <span className="md:col-span-1 justify-self-end text-gold transition-transform duration-500 group-hover:rotate-45 hidden md:block">
+              ↗
+            </span>
+          </div>
+        </Link>
+      </motion.div>
+    </div>
+  );
+};
 
-              {/* Gold reveal bar */}
-              <span
-                className={`absolute left-0 top-0 h-full w-px bg-gradient-gold transition-opacity duration-500 ${
-                  active === i ? "opacity-100" : "opacity-0"
-                }`}
+export const Services = () => {
+  const container = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+  return (
+      <main
+        id="services"
+        ref={container}
+        className="relative flex w-full flex-col items-center justify-center pb-[100vh] pt-[50vh] bg-ink grain px-4"
+      >
+        <div className="absolute left-1/2 top-[10%] grid -translate-x-1/2 content-start justify-items-center gap-6 text-center z-10 pointer-events-none w-full px-4">
+          <div className="flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-bone/50 mb-2">
+            <span className="h-px w-8 bg-gold" /> 02 — Practice Areas <span className="h-px w-8 bg-gold hidden md:block" />
+          </div>
+          <h2 className="font-serif text-4xl md:text-7xl text-bone leading-[1.05]">
+            What We Do.
+          </h2>
+          <span className="after:from-ink after:to-bone relative max-w-[20ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:mt-4 after:h-16 after:w-px after:bg-gradient-to-b after:content-[''] text-bone tracking-widest mt-4">
+            scroll down
+          </span>
+        </div>
+        <div className="w-full flex flex-col items-center z-20">
+          {services.map((project, i) => {
+            const targetScale = Math.max(
+              0.8,
+              1 - (services.length - i - 1) * 0.04,
+            );
+            return (
+              <StickyCard_001
+                key={`p_${i}`}
+                i={i}
+                {...project}
+                progress={scrollYProgress}
+                range={[i * 0.25, 1]}
+                targetScale={targetScale}
               />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+            );
+          })}
+        </div>
+      </main>
   );
 };

@@ -87,6 +87,12 @@
     font-feature-settings: 'ss01', 'cv11';
   }
   ::selection { background: hsl(var(--gold) / 0.35); color: hsl(var(--ink)); }
+  
+  @media (pointer: fine) {
+    body, a, button, input, [role="button"] {
+      cursor: none !important;
+    }
+  }
 }
 
 @layer utilities {

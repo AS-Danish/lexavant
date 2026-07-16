@@ -30,6 +30,16 @@ export const PageReveal = () => {
       },
     });
 
+    // Initial setup: move dot offscreen top
+    gsap.set([dotRef.current, outerDotRef.current], { y: -window.innerHeight });
+    
+    // Drop in the dot
+    tl.to([dotRef.current, outerDotRef.current], {
+      y: 0,
+      duration: 1.2,
+      ease: "bounce.out"
+    });
+
     // Phase 1: Breathing dot and counting
     const breathTw = gsap.to(outerDotRef.current, {
       scale: 2.2,
@@ -51,7 +61,7 @@ export const PageReveal = () => {
           counterRef.current.innerText = Math.round(counter.val) + "%";
         }
       },
-    });
+    }, "<"); // Start counting alongside or immediately after drop in
 
     // Phase 2: Transition to logo
     tl.add(() => {
