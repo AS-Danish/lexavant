@@ -5,13 +5,13 @@ const logos = [
 
 export const LogoMarquee = () => {
   return (
-    <section className="bg-bone border-y border-ink/10 py-8 overflow-hidden">
+    <section className="bg-ink border-y border-bone/10 py-8 overflow-hidden">
       <div className="container flex items-center gap-8">
-        <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">As featured in</span>
+        <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50">As featured in</span>
         <div className="relative flex-1 overflow-hidden">
           <div className="marquee-track flex gap-16 whitespace-nowrap">
             {[...logos, ...logos].map((l, i) => (
-              <span key={i} className="font-serif text-xl text-ink/40 hover:text-ink transition-colors">
+              <span key={i} className="font-serif text-xl text-bone/40 hover:text-bone transition-colors">
                 {l}
               </span>
             ))}

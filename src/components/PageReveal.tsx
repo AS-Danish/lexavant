@@ -135,7 +135,7 @@ export const PageReveal = () => {
   return (
     <div
       ref={wrapperRef}
-      className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none" // removed bg-bone, added pointer-events-none
+      className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none" // removed bg-ink, added pointer-events-none
     >
       <div
         ref={overlayRef}
