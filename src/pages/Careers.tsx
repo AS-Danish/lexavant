@@ -55,12 +55,12 @@ export default function CareersPage() {
         subtitle="We are a firm built on rigour, judgment, and a commitment to doing the work properly. We look for lawyers and professionals who share those values and who want to build a practice of consequence."
       />
       
-      <section className="bg-bone py-24 border-b border-ink/10">
+      <section className="bg-ink py-24 border-b border-bone/10">
         <div className="container grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-8 space-y-12">
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Opening Statement</h2>
-              <div className="space-y-4 text-ink/75 leading-relaxed text-lg">
+              <h2 className="font-serif text-3xl md:text-4xl text-bone mb-6">Opening Statement</h2>
+              <div className="space-y-4 text-bone/75 leading-relaxed text-lg">
                 <p>
                   At Lexavant, associates and junior professionals are expected to contribute substantively from an early stage. You will work alongside senior advocates and partners on live matters, develop your own areas of expertise, and be given the opportunity to grow in an environment that takes professional development seriously.
                 </p>
@@ -68,8 +68,8 @@ export default function CareersPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">What We Look For</h2>
-              <ul className="space-y-4 text-ink/75 leading-relaxed text-lg list-disc pl-5">
+              <h2 className="font-serif text-3xl md:text-4xl text-bone mb-6">What We Look For</h2>
+              <ul className="space-y-4 text-bone/75 leading-relaxed text-lg list-disc pl-5">
                 <li>Academic excellence and strong legal reasoning.</li>
                 <li>A willingness to take ownership of work and follow it through to completion.</li>
                 <li>Intellectual curiosity and the discipline to research and write with precision.</li>
@@ -79,34 +79,34 @@ export default function CareersPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Who We Hire</h2>
+              <h2 className="font-serif text-3xl md:text-4xl text-bone mb-6">Who We Hire</h2>
               <div className="space-y-8">
                 <div>
                   <h3 className="font-serif text-2xl text-gold mb-2">Associate & Senior Associate Roles</h3>
-                  <p className="text-ink/75 leading-relaxed text-lg">We recruit qualified advocates and solicitors with one to seven years of post-enrolment experience across our principal practice areas including litigation and disputes, general corporate, M&A, banking and finance, technology, data protection, media & entertainment, and private client.</p>
+                  <p className="text-bone/75 leading-relaxed text-lg">We recruit qualified advocates and solicitors with one to seven years of post-enrolment experience across our principal practice areas including litigation and disputes, general corporate, M&A, banking and finance, technology, data protection, media & entertainment, and private client.</p>
                 </div>
                 <div>
                   <h3 className="font-serif text-2xl text-gold mb-2">Internships & Training</h3>
-                  <p className="text-ink/75 leading-relaxed text-lg">We offer structured internship programmes for penultimate and final year law students, as well as recent graduates. Internships at Lexavant are substantive, i.e., you will work on live matters under close supervision and leave with practical skills and a real understanding of the firm’s practice.</p>
-                  <p className="text-ink/75 leading-relaxed text-lg mt-2">Internship applications are accepted on a rolling basis. We typically host interns for periods of four to eight weeks.</p>
+                  <p className="text-bone/75 leading-relaxed text-lg">We offer structured internship programmes for penultimate and final year law students, as well as recent graduates. Internships at Lexavant are substantive, i.e., you will work on live matters under close supervision and leave with practical skills and a real understanding of the firm’s practice.</p>
+                  <p className="text-bone/75 leading-relaxed text-lg mt-2">Internship applications are accepted on a rolling basis. We typically host interns for periods of four to eight weeks.</p>
                 </div>
                 <div>
                   <h3 className="font-serif text-2xl text-gold mb-2">Lateral Hires</h3>
-                  <p className="text-ink/75 leading-relaxed text-lg">We are always open to conversations with experienced practitioners who are looking to join a firm with a strong practice and a clear sense of direction. Please reach out to us directly.</p>
+                  <p className="text-bone/75 leading-relaxed text-lg">We are always open to conversations with experienced practitioners who are looking to join a firm with a strong practice and a clear sense of direction. Please reach out to us directly.</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Life At The Firm</h2>
-              <p className="text-ink/75 leading-relaxed text-lg">
+              <h2 className="font-serif text-3xl md:text-4xl text-bone mb-6">Life At The Firm</h2>
+              <p className="text-bone/75 leading-relaxed text-lg">
                 Lexavant is a firm where quality of work and quality of environment are equally important to us. We expect rigour, commitment, and intellectual honesty. In return, we offer meaningful work, access to senior practitioners, genuine responsibility, and a culture that values directness and mutual respect.
               </p>
             </div>
             
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">How To Apply</h2>
-              <p className="text-ink/75 leading-relaxed text-lg">
+              <h2 className="font-serif text-3xl md:text-4xl text-bone mb-6">How To Apply</h2>
+              <p className="text-bone/75 leading-relaxed text-lg">
                 Applications should be sent to <strong>careers@lexavant.com</strong> with the subject line: [Role] - [Your Name].<br/><br/>
                 Please include: a current CV; a covering letter of no more than one page setting out your interest in Lexavant and the practice area you are applying to; and, for legal roles, a sample of your written work - a brief, memo, or research note.<br/><br/>
                 We review applications as they arrive and will acknowledge receipt within five working days. We regret that we cannot respond individually to speculative applications that do not meet our current requirements.
@@ -115,7 +115,7 @@ export default function CareersPage() {
           </div>
           
           <div className="lg:col-span-4">
-            <div className="bg-ink p-8 border border-ink/10 shadow-sm rounded-sm relative overflow-hidden text-bone sticky top-32">
+            <div className="bg-ink p-8 border border-bone/10 shadow-sm rounded-sm relative overflow-hidden text-bone sticky top-32">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-gold/10 to-transparent opacity-50 pointer-events-none" />
               <h2 className="font-serif text-2xl mb-2">Submit Application</h2>
               <p className="text-bone/60 mb-8 font-mono text-xs uppercase tracking-widest border-b border-bone/20 pb-6">Confidential Submission</p>
@@ -139,11 +139,11 @@ export default function CareersPage() {
                 <div className="group">
                   <label htmlFor="position" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Role Applying For</label>
                   <select required id="position" name="position" className="w-full bg-transparent border-b border-bone/20 focus:border-gold py-3 text-bone outline-none transition-colors duration-500 font-serif text-lg appearance-none cursor-pointer">
-                    <option value="" disabled selected className="text-ink">Select a role...</option>
-                    <option value="Associate" className="text-ink">Associate</option>
-                    <option value="Senior Associate" className="text-ink">Senior Associate</option>
-                    <option value="Internship" className="text-ink">Internship</option>
-                    <option value="Other" className="text-ink">Other</option>
+                    <option value="" disabled selected className="text-bone">Select a role...</option>
+                    <option value="Associate" className="text-bone">Associate</option>
+                    <option value="Senior Associate" className="text-bone">Senior Associate</option>
+                    <option value="Internship" className="text-bone">Internship</option>
+                    <option value="Other" className="text-bone">Other</option>
                   </select>
                 </div>
                 

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ladyJustice from "@/assets/lady-justice.jpg";
-import heroVideo from "@/assets/hero4.mp4";
+import heroVideo from "@/assets/hero.mp4";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
