@@ -60,7 +60,7 @@ export const Nav = () => {
   }, []);
 
   const isHome = pathname === "/";
-  const isDarkBg = isHome || !scrolled;
+  const isDarkBg = isHome;
 
   const NavLink = ({ l }: { l: { label: string; to: string } }) => {
     const active = pathname === l.to;
