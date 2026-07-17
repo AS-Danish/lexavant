@@ -11,12 +11,12 @@ export default function DataPrivacy() {
         subtitle="As data regulation shifts from compliance exercises to core operational risks, we advise clients on navigating complex frameworks, securing digital assets, and maintaining regulatory trust."
       />
       
-      <section className="bg-ink py-24 border-b border-bone/10">
+      <section className="bg-bone py-24 border-b border-ink/10">
         <div className="container grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
-            <h2 className="font-serif text-2xl md:text-3xl text-bone sticky top-32">Practice Overview</h2>
+            <h2 className="font-serif text-2xl md:text-3xl text-ink sticky top-32">Practice Overview</h2>
           </div>
-          <div className="lg:col-span-8 space-y-6 text-bone/70 leading-relaxed text-lg">
+          <div className="lg:col-span-8 space-y-6 text-ink/70 leading-relaxed text-lg">
             <p>
               Data is no longer just an asset; it is a regulatory frontier. With the introduction of the Digital Personal Data Protection Act (DPDPA) in India and the enforcement of global standards like the GDPR, organizations face unprecedented scrutiny regarding how they collect, store, process, and transfer personal data.
             </p>
@@ -59,11 +59,11 @@ export default function DataPrivacy() {
         </div>
       </section>
 
-      <section className="bg-ink py-24 border-b border-bone/10">
+      <section className="bg-bone py-24 border-b border-ink/10">
         <div className="container">
           <div className="mb-16 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl text-bone mb-6">Indicative Experience</h2>
-            <p className="text-bone/70 leading-relaxed max-w-2xl mx-auto text-lg">
+            <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Indicative Experience</h2>
+            <p className="text-ink/70 leading-relaxed max-w-2xl mx-auto text-lg">
               A representative selection of our data privacy and protection mandates.
             </p>
           </div>
@@ -74,9 +74,9 @@ export default function DataPrivacy() {
               { t: "Healthcare Platform: Health Data Regulations", d: "Guided a digital health startup through the compliance requirements for handling sensitive personal health data, ensuring alignment with both Ministry of Health guidelines and data protection laws." },
               { t: "Financial Institution: Incident Response", d: "Acted as counsel for a non-banking financial company during a suspected data breach, managing CERT-In reporting obligations and subsequent regulatory inquiries." },
             ].map((exp, i) => (
-              <div key={i} className="border-t border-bone/10 pt-6">
-                <h3 className="font-serif text-xl text-bone mb-2">— {exp.t}</h3>
-                <p className="text-bone/75 leading-relaxed">{exp.d}</p>
+              <div key={i} className="border-t border-ink/10 pt-6">
+                <h3 className="font-serif text-xl text-ink mb-2">— {exp.t}</h3>
+                <p className="text-ink/75 leading-relaxed">{exp.d}</p>
               </div>
             ))}
           </div>
@@ -89,7 +89,7 @@ export default function DataPrivacy() {
           <p className="text-bone/70 leading-relaxed max-w-2xl mx-auto text-lg mb-10">
             For counsel regarding data compliance audits, breach response, or DPDPA transition strategies, please reach out.
           </p>
-          <div className="inline-block bg-ink/5 border border-bone/20 rounded-lg p-8 md:p-12 text-left w-full max-w-3xl">
+          <div className="inline-block bg-bone/5 border border-bone/20 rounded-lg p-8 md:p-12 text-left w-full max-w-3xl">
             <h3 className="font-serif text-2xl text-gold mb-2">LEXAVANT</h3>
             <p className="font-mono text-[11px] uppercase tracking-widest text-bone/60 mb-8 pb-8 border-b border-bone/20">Data Privacy & Protection Practice</p>
             <div className="space-y-4 font-mono text-sm tracking-wide">

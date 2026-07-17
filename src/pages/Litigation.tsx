@@ -12,12 +12,12 @@ export default function Litigation() {
         subtitle="Disputes are decided long before the hearing in the quality of the strategy, the discipline of the record, and the judgment of the counsel who carry them. Lexavant’s disputes practice was built on that conviction."
       />
       
-      <section className="bg-ink py-24 border-b border-bone/10">
+      <section className="bg-bone py-24 border-b border-ink/10">
         <div className="container grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
-            <h2 className="font-serif text-2xl md:text-3xl text-bone sticky top-32">Practice Overview</h2>
+            <h2 className="font-serif text-2xl md:text-3xl text-ink sticky top-32">Practice Overview</h2>
           </div>
-          <div className="lg:col-span-8 space-y-6 text-bone/70 leading-relaxed text-lg">
+          <div className="lg:col-span-8 space-y-6 text-ink/70 leading-relaxed text-lg">
             <p>
               We are a full-service litigation and dispute-resolution practice that combines decades of courtroom experience at the constitutional courts with a modern, cross-border commercial and technology bench. Led from the Mumbai office and supported from London, Delhi and Aurangabad, we appear before every level of the Indian judiciary and the country’s specialised tribunals, and we co-ordinate disputes across the United Kingdom, the European Union, the United States, the Middle East and Southeast Asia.
             </p>
@@ -50,11 +50,11 @@ export default function Litigation() {
         </div>
       </section>
 
-      <section className="bg-ink py-24">
+      <section className="bg-bone py-24">
         <div className="container">
           <div className="mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl text-bone mb-6">Capabilities – The Spectrum of Disputes We Handle</h2>
-            <p className="text-bone/70 leading-relaxed max-w-3xl text-lg">
+            <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Capabilities – The Spectrum of Disputes We Handle</h2>
+            <p className="text-ink/70 leading-relaxed max-w-3xl text-lg">
               Our disputes practice is deliberately broad. The areas below are illustrative of our reach in practice, if it can be litigated, arbitrated, defended or enforced in India, we can act on it.
             </p>
           </div>
@@ -68,12 +68,12 @@ export default function Litigation() {
               { title: "Insolvency, Bankruptcy & Restructuring", desc: "Full-spectrum representation under the Insolvency and Bankruptcy Code before the NCLT and NCLAT.", items: ["CIRP initiation and defence under Sections 7, 9 and 10", "Financial and operational creditors, resolution professionals and the CoC", "Liquidation, avoidance and preferential / undervalued-transaction actions", "Personal-guarantor insolvency and bankruptcy", "Pre-pack insolvency, distressed-asset acquisitions and NPA resolution", "Cross-border insolvency, asset tracing and recovery"] },
               { title: "Arbitration & Alternative Dispute Resolution", desc: "Domestic and international arbitration, from drafting the clause to enforcing the award.", items: ["Domestic and international commercial arbitration (institutional and ad hoc)", "Interim relief under Section 9 and emergency / tribunal-ordered measures", "Setting-aside and enforcement under Sections 34, 36 and 37", "Enforcement of foreign awards under the New York Convention", "Construction, infrastructure, EPC and concession arbitration", "Mediation, conciliation and structured settlement"] },
             ].map((cap, i) => (
-              <div key={i} className="border-t border-bone/15 pt-6">
-                <h3 className="font-serif text-xl text-bone mb-2">▪ {cap.title}</h3>
-                <p className="text-sm italic text-bone/60 mb-4">{cap.desc}</p>
+              <div key={i} className="border-t border-ink/15 pt-6">
+                <h3 className="font-serif text-xl text-ink mb-2">▪ {cap.title}</h3>
+                <p className="text-sm italic text-ink/60 mb-4">{cap.desc}</p>
                 <ul className="space-y-2">
                   {cap.items.map((item, j) => (
-                    <li key={j} className="flex gap-2 text-bone/75 text-sm">
+                    <li key={j} className="flex gap-2 text-ink/75 text-sm">
                       <span className="text-gold">•</span> <span>{item}</span>
                     </li>
                   ))}
@@ -111,9 +111,9 @@ export default function Litigation() {
         </div>
       </section>
 
-      <section className="bg-ink py-24">
+      <section className="bg-bone py-24">
         <div className="container">
-          <h2 className="font-serif text-3xl md:text-4xl text-bone mb-16 text-center">Counsel – Our Litigation & Disputes Team</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-ink mb-16 text-center">Counsel – Our Litigation & Disputes Team</h2>
           
           <div className="max-w-4xl mx-auto space-y-16">
             {[
@@ -144,15 +144,15 @@ export default function Litigation() {
                 desc: "Adv. Chaudhary supports the disputes team across legal research, drafting and matter management, with a developing practice spanning the firm’s litigation portfolio.",
               }
             ].map((lawyer, i) => (
-              <div key={i} className="flex flex-col md:flex-row gap-6 items-start border-t border-bone/10 pt-8">
+              <div key={i} className="flex flex-col md:flex-row gap-6 items-start border-t border-ink/10 pt-8">
                 <div className="w-16 h-16 shrink-0 bg-ink text-gold flex items-center justify-center font-serif text-xl rounded-sm">
                   {lawyer.init}
                 </div>
                 <div>
-                  <h3 className="font-serif text-2xl text-bone">{lawyer.name}</h3>
+                  <h3 className="font-serif text-2xl text-ink">{lawyer.name}</h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-gold-deep mb-4 mt-1">{lawyer.title}</p>
-                  <p className="text-bone/75 leading-relaxed text-sm mb-4">{lawyer.desc}</p>
-                  {lawyer.focus && <p className="text-sm italic text-bone/60"><span className="font-semibold text-bone/80 not-italic">Focus:</span> {lawyer.focus}</p>}
+                  <p className="text-ink/75 leading-relaxed text-sm mb-4">{lawyer.desc}</p>
+                  {lawyer.focus && <p className="text-sm italic text-ink/60"><span className="font-semibold text-ink/80 not-italic">Focus:</span> {lawyer.focus}</p>}
                 </div>
               </div>
             ))}
@@ -160,32 +160,32 @@ export default function Litigation() {
         </div>
       </section>
 
-      <section className="bg-ink py-24 border-t border-bone/10">
+      <section className="bg-bone py-24 border-t border-ink/10">
         <div className="container">
           <div className="mb-16 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl text-bone mb-6">Select Reported Judgments</h2>
-            <p className="text-bone/70 leading-relaxed max-w-3xl mx-auto text-lg">
+            <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Select Reported Judgments</h2>
+            <p className="text-ink/70 leading-relaxed max-w-3xl mx-auto text-lg">
               A representative selection from the reported judgments in which counsel to the firm has appeared, before the Supreme Court of India and the High Court of Judicature at Bombay (and its Benches).
             </p>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-bone border-collapse min-w-[800px]">
+            <table className="w-full text-left text-ink border-collapse min-w-[800px]">
               <thead>
                 <tr className="bg-ink text-bone font-serif text-lg">
-                  <th className="p-4 border border-bone/20 w-16 text-center">#</th>
-                  <th className="p-4 border border-bone/20 w-1/2">Parties</th>
-                  <th className="p-4 border border-bone/20">Citation</th>
-                  <th className="p-4 border border-bone/20 text-center whitespace-nowrap">Appeared For</th>
+                  <th className="p-4 border border-ink/20 w-16 text-center">#</th>
+                  <th className="p-4 border border-ink/20 w-1/2">Parties</th>
+                  <th className="p-4 border border-ink/20">Citation</th>
+                  <th className="p-4 border border-ink/20 text-center whitespace-nowrap">Appeared For</th>
                 </tr>
               </thead>
               <tbody className="font-sans text-sm">
                 {reportedJudgments.map((j) => (
-                  <tr key={j.id} className="border-b border-bone/10 hover:bg-ink/5 transition-colors">
-                    <td className="p-4 border-r border-bone/10 font-mono text-gold-deep text-center">{j.id}</td>
-                    <td className="p-4 border-r border-bone/10 font-medium text-bone/90 leading-snug">{j.parties}</td>
-                    <td className="p-4 border-r border-bone/10 text-bone/70 italic">{j.citation}</td>
-                    <td className="p-4 text-center text-bone/80">{j.appearedFor}</td>
+                  <tr key={j.id} className="border-b border-ink/10 hover:bg-ink/5 transition-colors">
+                    <td className="p-4 border-r border-ink/10 font-mono text-gold-deep text-center">{j.id}</td>
+                    <td className="p-4 border-r border-ink/10 font-medium text-ink/90 leading-snug">{j.parties}</td>
+                    <td className="p-4 border-r border-ink/10 text-ink/70 italic">{j.citation}</td>
+                    <td className="p-4 text-center text-ink/80">{j.appearedFor}</td>
                   </tr>
                 ))}
               </tbody>
@@ -200,7 +200,7 @@ export default function Litigation() {
           <p className="text-bone/70 leading-relaxed max-w-2xl mx-auto text-lg mb-10">
             To discuss a dispute, a potential claim, or a matter you would like reviewed, please contact us. Initial conferences are by appointment.
           </p>
-          <div className="inline-block bg-ink/5 border border-bone/20 rounded-lg p-8 md:p-12 text-left w-full max-w-3xl">
+          <div className="inline-block bg-bone/5 border border-bone/20 rounded-lg p-8 md:p-12 text-left w-full max-w-3xl">
             <h3 className="font-serif text-2xl text-gold mb-2">LEXAVANT</h3>
             <p className="font-mono text-[11px] uppercase tracking-widest text-bone/60 mb-8 pb-8 border-b border-bone/20">Litigation & Dispute Resolution Practice</p>
             <div className="space-y-4 font-mono text-sm tracking-wide">

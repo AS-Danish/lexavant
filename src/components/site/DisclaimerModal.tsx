@@ -112,7 +112,7 @@ export function DisclaimerModal() {
           <AlertDialogAction 
             onClick={handleAgree} 
             disabled={!hasRead}
-            className="w-full sm:w-auto bg-gold hover:bg-gold-soft text-bone font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full sm:w-auto bg-gold hover:bg-gold-soft text-ink font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {hasRead ? "I Agree" : "Please scroll to read"}
           </AlertDialogAction>
