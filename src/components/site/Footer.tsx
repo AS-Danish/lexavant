@@ -52,7 +52,7 @@ export const Footer = () => {
             </p>
             <div className="mt-8 flex gap-3">
               {["LI", "X", "IG", "YT"].map((s) => (
-                <a key={s} href="#" aria-label={s} className="h-10 w-10 grid place-items-center rounded-full border border-bone/20 font-mono text-[10px] hover:bg-gold hover:text-bone hover:border-gold transition-all duration-500">
+                <a key={s} href="#" aria-label={s} className="h-10 w-10 grid place-items-center rounded-full border border-bone/20 font-mono text-[10px] hover:bg-gold hover:text-ink hover:border-gold transition-all duration-500">
                   {s}
                 </a>
               ))}

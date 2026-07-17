@@ -54,12 +54,12 @@ export default function Team() {
         subtitle="Our team comprises advocates with standing before constitutional courts, transactional lawyers trained at leading international firms, and specialists in technology and private-client practice."
       />
       
-      <section className="bg-ink py-24">
+      <section className="bg-bone py-24">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {teamMembers.map((lawyer, i) => (
-              <div key={i} className="group border border-bone/10 bg-ink transition-colors hover:bg-ink hover:text-bone p-8 rounded-sm flex flex-col h-full">
-                <div className="w-16 h-16 shrink-0 bg-ink group-hover:bg-gold text-gold group-hover:text-bone flex items-center justify-center font-serif text-xl rounded-sm mb-6 transition-colors">
+              <div key={i} className="group border border-ink/10 bg-bone transition-colors hover:bg-ink hover:text-bone p-8 rounded-sm flex flex-col h-full">
+                <div className="w-16 h-16 shrink-0 bg-ink group-hover:bg-gold text-gold group-hover:text-ink flex items-center justify-center font-serif text-xl rounded-sm mb-6 transition-colors">
                   {lawyer.init}
                 </div>
                 <h3 className="font-serif text-2xl mb-1">{lawyer.name}</h3>

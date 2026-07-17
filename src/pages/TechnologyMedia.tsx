@@ -11,12 +11,12 @@ export default function TechnologyMedia() {
         subtitle="The regulatory landscape for innovation is being rewritten in real time. We provide the legal architecture for technology companies, media houses, and digital platforms to operate, scale, and protect their assets in a shifting compliance environment."
       />
       
-      <section className="bg-ink py-24 border-b border-bone/10">
+      <section className="bg-bone py-24 border-b border-ink/10">
         <div className="container grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
-            <h2 className="font-serif text-2xl md:text-3xl text-bone sticky top-32">Practice Overview</h2>
+            <h2 className="font-serif text-2xl md:text-3xl text-ink sticky top-32">Practice Overview</h2>
           </div>
-          <div className="lg:col-span-8 space-y-6 text-bone/70 leading-relaxed text-lg">
+          <div className="lg:col-span-8 space-y-6 text-ink/70 leading-relaxed text-lg">
             <p>
               Lexavant’s TMEG practice operates at the intersection of law, technology, and content. We represent a spectrum of clients—from global tech majors and leading OTT platforms to independent production houses, gaming operators, fintech startups, and individual creators.
             </p>
@@ -60,11 +60,11 @@ export default function TechnologyMedia() {
         </div>
       </section>
 
-      <section className="bg-ink py-24 border-b border-bone/10">
+      <section className="bg-bone py-24 border-b border-ink/10">
         <div className="container">
           <div className="mb-16 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl text-bone mb-6">Indicative Experience</h2>
-            <p className="text-bone/70 leading-relaxed max-w-2xl mx-auto text-lg">
+            <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Indicative Experience</h2>
+            <p className="text-ink/70 leading-relaxed max-w-2xl mx-auto text-lg">
               A representative selection of recent TMEG mandates.
             </p>
           </div>
@@ -76,18 +76,18 @@ export default function TechnologyMedia() {
               { t: "Fintech Startup: RBI PA Guidelines", d: "Guided a rapidly growing fintech platform through the Reserve Bank of India’s Payment Aggregator licensing process, including overhauling their merchant onboarding agreements and data localization compliance." },
               { t: "IP Protection: FMCG Brand Portfolio", d: "Managed the complete trademark portfolio for a legacy Indian FMCG brand across 15+ jurisdictions, successfully prosecuting multiple infringement actions against counterfeiters." },
             ].map((exp, i) => (
-              <div key={i} className="border-t border-bone/10 pt-6">
-                <h3 className="font-serif text-xl text-bone mb-2">— {exp.t}</h3>
-                <p className="text-bone/75 leading-relaxed">{exp.d}</p>
+              <div key={i} className="border-t border-ink/10 pt-6">
+                <h3 className="font-serif text-xl text-ink mb-2">— {exp.t}</h3>
+                <p className="text-ink/75 leading-relaxed">{exp.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-ink py-24">
+      <section className="bg-bone py-24">
         <div className="container">
-          <h2 className="font-serif text-3xl md:text-4xl text-bone mb-16 text-center">Counsel – Our TMEG Team</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-ink mb-16 text-center">Counsel – Our TMEG Team</h2>
           
           <div className="max-w-4xl mx-auto space-y-16">
             <div className="flex flex-col md:flex-row gap-6 items-start">
@@ -95,9 +95,9 @@ export default function TechnologyMedia() {
                 RV
               </div>
               <div>
-                <h3 className="font-serif text-2xl text-bone">Adv. Raashi Vaishya</h3>
+                <h3 className="font-serif text-2xl text-ink">Adv. Raashi Vaishya</h3>
                 <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-gold-deep mb-4 mt-1">Technology, Media, Sports and Gaming Lawyer</p>
-                <p className="text-bone/75 leading-relaxed text-sm">
+                <p className="text-ink/75 leading-relaxed text-sm">
                   A commercial lawyer specialising in Technology, Media, Sports and Gaming law advising all stakeholders including platforms, companies, production houses, creators, talent, artists, athletes, brands, investors and founders on various matters including without limitation content and IP commercialisation, production, licensing and distribution arrangements, talent and endorsement deals, sports and gaming partnerships, gaming models, commercial collaborations, sponsorships, platform agreements, and related regulatory frameworks. Supports clients across the full lifecycle right from structuring and negotiation to documentation, compliance and execution.
                 </p>
               </div>
@@ -127,7 +127,7 @@ export default function TechnologyMedia() {
           <p className="text-bone/70 leading-relaxed max-w-2xl mx-auto text-lg mb-10">
             For counsel regarding technology regulations, media rights, or IP protection, please reach out to our dedicated team.
           </p>
-          <div className="inline-block bg-ink/5 border border-bone/20 rounded-lg p-8 md:p-12 text-left w-full max-w-3xl">
+          <div className="inline-block bg-bone/5 border border-bone/20 rounded-lg p-8 md:p-12 text-left w-full max-w-3xl">
             <h3 className="font-serif text-2xl text-gold mb-2">LEXAVANT</h3>
             <p className="font-mono text-[11px] uppercase tracking-widest text-bone/60 mb-8 pb-8 border-b border-bone/20">Technology, Media, Entertainment & Gaming</p>
             <div className="space-y-4 font-mono text-sm tracking-wide">

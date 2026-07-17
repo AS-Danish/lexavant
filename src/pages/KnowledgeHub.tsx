@@ -73,11 +73,11 @@ export default function KnowledgeHub() {
         subtitle="Insights, analysis, and firm updates across our practice areas."
       />
       
-      <section className="bg-ink py-24 min-h-[60vh]">
+      <section className="bg-bone py-24 min-h-[60vh]">
         <div className="container">
           
           {/* Filters */}
-          <div className="flex flex-wrap items-center gap-4 mb-16 border-b border-bone/10 pb-6">
+          <div className="flex flex-wrap items-center gap-4 mb-16 border-b border-ink/10 pb-6">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -85,7 +85,7 @@ export default function KnowledgeHub() {
                 className={`font-mono text-xs uppercase tracking-[0.18em] px-5 py-2.5 rounded-full transition-all duration-300 ${
                   activeCategory === cat 
                     ? "bg-ink text-bone" 
-                    : "bg-ink text-bone/70 hover:text-bone hover:bg-ink/5 border border-bone/10"
+                    : "bg-bone text-ink/70 hover:text-ink hover:bg-ink/5 border border-ink/10"
                 }`}
               >
                 {cat}
@@ -99,26 +99,26 @@ export default function KnowledgeHub() {
               <article key={article.id} className="group cursor-pointer flex flex-col h-full">
                 <div className="mb-4 overflow-hidden rounded-sm aspect-[1.6/1] bg-ink/5 relative">
                   <div className="absolute inset-0 bg-ink/5 group-hover:bg-transparent transition-colors duration-500" />
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-ink rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                    <ArrowUpRight size={18} className="text-bone" />
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-bone rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
+                    <ArrowUpRight size={18} className="text-ink" />
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-bone/60 mb-4">
+                <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mb-4">
                   <span>{article.date}</span>
                   <span className="w-1 h-1 rounded-full bg-gold"></span>
                   <span className="text-gold-deep">{article.practice}</span>
                 </div>
                 
-                <h3 className="font-serif text-2xl text-bone mb-4 leading-snug group-hover:text-gold-deep transition-colors duration-300">
+                <h3 className="font-serif text-2xl text-ink mb-4 leading-snug group-hover:text-gold-deep transition-colors duration-300">
                   {article.title}
                 </h3>
                 
-                <p className="text-bone/70 leading-relaxed text-sm mb-6 flex-grow">
+                <p className="text-ink/70 leading-relaxed text-sm mb-6 flex-grow">
                   {article.excerpt}
                 </p>
                 
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-bone/40 mt-auto border-t border-bone/10 pt-4">
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40 mt-auto border-t border-ink/10 pt-4">
                   {article.category}
                 </div>
               </article>

@@ -60,7 +60,7 @@ export const Nav = () => {
   }, []);
 
   const isHome = pathname === "/";
-  const isDarkBg = true;
+  const isDarkBg = isHome || !scrolled;
 
   const NavLink = ({ l }: { l: { label: string; to: string } }) => {
     const active = pathname === l.to;
@@ -83,7 +83,7 @@ export const Nav = () => {
         scrolled 
           ? isHome 
             ? "bg-ink/90 backdrop-blur-xl border-b border-bone/10" 
-            : "bg-ink/90 backdrop-blur-xl border-b border-bone/10"
+            : "bg-bone/90 backdrop-blur-xl border-b border-ink/10"
           : "bg-transparent"
       }`}
     >
@@ -111,12 +111,12 @@ export const Nav = () => {
               PRACTICE AREAS <ChevronDown className="w-3 h-3 transition-transform duration-300 group-hover:-rotate-180" />
             </span>
             <div className="absolute top-full pt-2 left-1/2 -translate-x-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 w-72">
-              <div className="bg-bone border border-bone/10 shadow-noir p-1.5 flex flex-col gap-0.5 rounded-sm">
+              <div className="bg-bone border border-ink/10 shadow-noir p-1.5 flex flex-col gap-0.5 rounded-sm">
                 {practiceAreas.map((p) => (
                   <Link 
                     key={p.to} 
                     to={p.to} 
-                    className="block px-4 py-2.5 font-sans text-[13px] tracking-normal normal-case text-bone/80 hover:bg-bone/10 hover:text-bone transition-colors rounded-sm leading-snug"
+                    className="block px-4 py-2.5 font-sans text-[13px] tracking-normal normal-case text-ink/80 hover:bg-ink/5 hover:text-ink transition-colors rounded-sm leading-snug"
                   >
                     {p.label}
                   </Link>
@@ -141,7 +141,7 @@ export const Nav = () => {
 
       {open && (
         <div className={`md:hidden animate-fade-in max-h-[80vh] overflow-y-auto ${
-          isDarkBg ? "bg-ink border-t border-bone/10" : "bg-bone border-t border-bone/10"
+          isDarkBg ? "bg-ink border-t border-bone/10" : "bg-bone border-t border-ink/10"
         }`}>
           <ul className="container py-6 flex flex-col gap-5 font-mono text-xs uppercase tracking-[0.18em]">
             {regularLinks.map((l) => (

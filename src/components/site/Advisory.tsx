@@ -28,7 +28,7 @@ export const Advisory = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-ink/15" data-stagger>
+        <div className="grid md:grid-cols-3 gap-px bg-bone/15" data-stagger>
           {items.map((it, i) => (
             <div key={i} data-stagger-item className="bg-ink p-8 md:p-12 group hover:bg-ink-soft transition-colors duration-500">
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-6">FY 2024 — 25</div>

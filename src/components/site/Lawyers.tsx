@@ -10,19 +10,19 @@ const team = [
 
 export const Lawyers = () => {
   return (
-    <section id="lawyers" className="bg-ink py-28 md:py-40">
+    <section id="lawyers" className="bg-bone py-28 md:py-40">
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
           <div>
-            <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-bone/60 mb-6" data-reveal>
+            <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60 mb-6" data-reveal>
               <span className="h-px w-8 bg-gold" /> 04 — The Counsel
             </div>
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-bone max-w-3xl" data-reveal>
+            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink max-w-3xl" data-reveal>
               The lawyers who
               <span className="italic text-gold-deep"> answer your call.</span>
             </h2>
           </div>
-          <a href="#contact" data-reveal className="font-mono text-xs uppercase tracking-[0.18em] text-bone/70 hover:text-bone underline-offset-8 hover:underline">
+          <a href="#contact" data-reveal className="font-mono text-xs uppercase tracking-[0.18em] text-ink/70 hover:text-ink underline-offset-8 hover:underline">
             View Full Roster →
           </a>
         </div>
@@ -50,8 +50,8 @@ export const Lawyers = () => {
               </div>
               <div className="mt-5 flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="font-serif text-2xl text-bone leading-tight">{p.name}</h3>
-                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-bone/55">{p.role}</p>
+                  <h3 className="font-serif text-2xl text-ink leading-tight">{p.name}</h3>
+                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/55">{p.role}</p>
                 </div>
                 <span className="text-gold transition-transform group-hover:rotate-45">↗</span>
               </div>

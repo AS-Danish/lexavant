@@ -14,7 +14,7 @@ export const PageShell = ({ children, hideNewsletter = false }: { children: Reac
   }, [pathname]);
 
   return (
-    <div ref={scope} className="bg-ink text-bone min-h-screen overflow-x-hidden">
+    <div ref={scope} className="bg-bone text-ink min-h-screen overflow-x-hidden">
       <Nav />
       <main>
         {children}
