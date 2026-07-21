@@ -32,7 +32,7 @@ const cols: { h: string; l: { label: string; to: string }[] }[] = [
     l: [
       { label: "+91 7774 089 444", to: "tel:+917774089444" },
       { label: "+44 7867 222 719", to: "tel:+447867222719" },
-      { label: "advchaitanya@lexavant.com", to: "mailto:advchaitanya@lexavant.com" },
+      { label: "info@lexavant.com", to: "mailto:info@lexavant.com" },
       { label: "London | Mumbai | Delhi | Aurangabad", to: "/contact" },
     ],
   },
@@ -40,7 +40,7 @@ const cols: { h: string; l: { label: string; to: string }[] }[] = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-ink text-bone border-t border-bone/10">
+    <footer className="bg-black text-bone border-t border-bone/10">
       <div className="container py-20">
         <div className="grid lg:grid-cols-12 gap-12 mb-20">
           <div className="lg:col-span-4">
@@ -93,7 +93,7 @@ export const Footer = () => {
             <a href="#" className="hover:text-bone">Disclaimer</a>
           </div>
         </div>
-        
+
         <div className="mt-6 text-xs text-bone/30 max-w-4xl leading-relaxed">
           As per the rules of the Bar Council of India, advocates are not permitted to advertise or solicit work. This website has been prepared solely for informational purposes at the user's request and does not constitute an advertisement, solicitation, or legal advice. Accessing this website does not create an attorney-client relationship.
         </div>

@@ -14,10 +14,10 @@ export const Hero = () => {
     const initHeroAnimation = () => {
       ctx = gsap.context(() => {
         const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
-        
+
         tl.fromTo(".hero-video-overlay", { opacity: 0 }, { opacity: 1, duration: 2 })
           .fromTo(".hero-watermark", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 2, ease: "power2.out" }, 0.4)
-          .fromTo(".hero-left-content", 
+          .fromTo(".hero-left-content",
             { x: -100, opacity: 0 },
             { x: 0, opacity: 1, duration: 1.6, ease: "power3.out" },
             0.5
@@ -56,10 +56,10 @@ export const Hero = () => {
       >
         <source src={heroVideo} type="video/mp4" />
       </video>
-      
+
       {/* Dark Overlay */}
-      <div className="hero-video-overlay absolute inset-0 bg-ink/75 z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/50 to-transparent z-[2]" />
+      <div className="hero-video-overlay absolute inset-0 bg-ink/40 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/30 to-transparent z-[2]" />
 
       {/* Giant watermark */}
       <div
@@ -76,17 +76,18 @@ export const Hero = () => {
             Lexavant LLP
           </div>
 
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] leading-[1.1] text-bone mb-8">
-            <span className="block reveal-line"><span className="hero-line">WHO WE</span></span>
-            <span className="block reveal-line"><span className="hero-line italic gradient-gold-text">ARE</span></span>
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-[1.15] text-bone mb-6">
+            <span className="block reveal-line"><span className="hero-line">Satyasya sevakāḥ <span className="text-gold">·</span></span></span>
+            <span className="block reveal-line"><span className="hero-line italic gradient-gold-text">Dharmasya setuḥ</span></span>
           </h1>
+          
+          <div className="hero-line mb-8 font-serif">
+            <div className="text-bone/80 text-lg md:text-2xl tracking-wide">Servants of truth. A bridge of dharma.</div>
+          </div>
 
           <div className="space-y-6">
             <p className="hero-sub max-w-2xl text-bone/90 text-base md:text-lg leading-relaxed font-medium">
-              Lexavant LLP is a full-service law firm comprising nationally and internationally trained advocates, transactional lawyers, and advisory professionals. We combine decades of courtroom experience with a rigorous understanding of modern commercial and regulatory frameworks.
-            </p>
-            <p className="hero-sub max-w-2xl text-bone/70 text-sm md:text-base leading-relaxed">
-              Our practice spans litigation, dispute resolution, general corporate, transactional advisory, technology, data law, media & entertainment, intellectual property, and private-client matters, amongst others. We act for listed companies, multinational corporations, financial institutions, family-owned businesses, founders, and high-net-worth individuals across India and in coordination with counsel internationally.
+              A premier full-service law firm combining decades of courtroom experience with rigorous commercial acumen. We advise clients across litigation, corporate, technology, and private-client matters globally.
             </p>
           </div>
 

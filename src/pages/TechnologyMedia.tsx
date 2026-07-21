@@ -10,7 +10,7 @@ export default function TechnologyMedia() {
         italic="Entertainment & Gaming."
         subtitle="The regulatory landscape for innovation is being rewritten in real time. We provide the legal architecture for technology companies, media houses, and digital platforms to operate, scale, and protect their assets in a shifting compliance environment."
       />
-      
+
       <section className="bg-bone py-24 border-b border-ink/10">
         <div className="container grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
@@ -88,7 +88,7 @@ export default function TechnologyMedia() {
       <section className="bg-bone py-24">
         <div className="container">
           <h2 className="font-serif text-3xl md:text-4xl text-ink mb-16 text-center">Counsel – Our TMEG Team</h2>
-          
+
           <div className="max-w-4xl mx-auto space-y-16">
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <div className="w-16 h-16 shrink-0 bg-ink text-gold flex items-center justify-center font-serif text-xl rounded-sm">
@@ -141,7 +141,7 @@ export default function TechnologyMedia() {
               </div>
               <div className="flex flex-col md:flex-row gap-2 md:gap-8">
                 <span className="text-gold w-32 shrink-0">EMAIL</span>
-                <a href="mailto:advchaitanya@lexavant.com" className="text-bone hover:text-gold transition-colors">advchaitanya@lexavant.com</a>
+                <a href="mailto:info@lexavant.com" className="text-bone hover:text-gold transition-colors">info@lexavant.com</a>
               </div>
             </div>
           </div>

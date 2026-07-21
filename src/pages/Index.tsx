@@ -10,14 +10,14 @@ const Index = () => {
   const scope = useReveal();
 
   return (
-    <div ref={scope} className="bg-ink text-bone min-h-screen overflow-x-hidden">
+    <div ref={scope} className="bg-bone text-ink min-h-screen overflow-x-hidden">
       <Nav />
       <main>
         <Hero />
         <Services />
         
         {/* Ethos Statement Section */}
-        <section className="bg-ink text-bone py-24 border-y border-bone/10">
+        <section className="bg-bone text-ink py-24 border-y border-ink/10">
           <div className="container text-center">
             <h2 className="font-serif text-3xl md:text-5xl max-w-4xl mx-auto leading-[1.2] italic gradient-gold-text">
               “Built on foresight, strategy, precision, and an uncompromising standard of counsel.”

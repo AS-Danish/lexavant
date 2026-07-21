@@ -2,6 +2,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
 import { Link } from "react-router-dom";
 import lawBooks from "@/assets/law-books.jpg";
+import heroVideo from "@/assets/hero.mp4";
 
 const AboutPage = () => (
   <PageShell>
@@ -11,7 +12,7 @@ const AboutPage = () => (
       italic="Technology."
       subtitle="Lexavant was built on a proposition that has not changed since inception: that exceptional legal counsel requires not just technical command of the law, but commercial judgment, strategic clarity, and an unwavering commitment to the client’s objective."
     />
-    
+
     <section className="bg-bone py-24 md:py-32">
       <div className="container grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
@@ -19,7 +20,7 @@ const AboutPage = () => (
             <span className="h-px w-8 bg-gold" /> The Firm
           </div>
           <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink" data-reveal>
-            A full-service firm. <br/>
+            A full-service firm. <br />
             <span className="italic text-gold-deep">Not just a claim.</span>
           </h2>
         </div>
@@ -62,12 +63,24 @@ const AboutPage = () => (
             </p>
           </div>
         </div>
-        
+
         <div className="lg:col-span-5 lg:col-start-8 relative aspect-square overflow-hidden rounded-sm shadow-noir" data-reveal>
           <img src={lawBooks} alt="Antique leather law books" loading="lazy" width={1400} height={900} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-vignette" />
         </div>
       </div>
+    </section>
+
+    <section className="bg-ink overflow-hidden border-b border-bone/10" data-reveal>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-[50vh] md:h-[70vh] object-cover grayscale opacity-60 hover:opacity-100 transition-opacity duration-1000"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
     </section>
 
     <section className="bg-bone py-24 md:py-32">
@@ -86,7 +99,7 @@ const AboutPage = () => (
               Meet the Team →
             </Link>
           </div>
-          
+
           <div data-reveal>
             <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold-deep mb-4">Offices</div>
             <h3 className="font-serif text-2xl mb-4 text-ink">Where We Are</h3>
@@ -99,7 +112,7 @@ const AboutPage = () => (
         <div className="lg:col-span-7 lg:col-start-6">
           <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold-deep mb-8" data-reveal>What We Stand For</div>
           <h2 className="font-serif text-4xl mb-12 text-ink" data-reveal>Ethos</h2>
-          
+
           <ul className="space-y-8" data-stagger>
             {[
               { t: "Partner-led attention on every matter." },
@@ -109,7 +122,7 @@ const AboutPage = () => (
               { t: "Discretion. Client confidences are absolute." },
             ].map((item, i) => (
               <li key={i} data-stagger-item className="flex items-start gap-4 border-t border-ink/10 pt-6">
-                <span className="font-mono text-gold shrink-0 mt-1">0{i+1}</span>
+                <span className="font-mono text-gold shrink-0 mt-1">0{i + 1}</span>
                 <span className="font-serif text-xl md:text-2xl text-ink/80">{item.t}</span>
               </li>
             ))}

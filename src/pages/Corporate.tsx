@@ -1,5 +1,6 @@
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
+import ladyJustice from "@/assets/lady-justice.jpg";
 
 export default function Corporate() {
   return (
@@ -10,7 +11,7 @@ export default function Corporate() {
         italic="Private Client & Securities."
         subtitle="Transactions are won long before signing in the quality of the structure, the discipline of the diligence, and the judgment of the lawyers who execute them. Our corporate and transactional practice is built on that conviction."
       />
-      
+
       <section className="bg-bone py-24 border-b border-ink/10">
         <div className="container grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
@@ -99,10 +100,18 @@ export default function Corporate() {
         </div>
       </section>
 
+      <section className="bg-bone overflow-hidden border-b border-ink/10" data-reveal>
+        <div className="container py-12 md:py-24">
+          <div className="relative aspect-video max-w-5xl mx-auto rounded-sm overflow-hidden shadow-soft">
+            <img src={ladyJustice} alt="Lady Justice Statue" className="w-full h-full object-cover object-top" />
+          </div>
+        </div>
+      </section>
+
       <section className="bg-bone py-24">
         <div className="container">
           <h2 className="font-serif text-3xl md:text-4xl text-ink mb-16 text-center">Counsel – Our Corporate Team</h2>
-          
+
           <div className="max-w-4xl mx-auto space-y-16">
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <div className="w-16 h-16 shrink-0 bg-ink text-gold flex items-center justify-center font-serif text-xl rounded-sm">

@@ -19,22 +19,22 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-ink text-bone py-28 md:py-40 grain relative overflow-hidden">
-      <div aria-hidden className="absolute inset-0 bg-gradient-vignette" />
+    <section id="contact" className="bg-bone text-ink py-28 md:py-40 relative overflow-hidden">
+      <div aria-hidden className="absolute inset-0 pointer-events-none opacity-20" style={{ background: "radial-gradient(ellipse at center, transparent 40%, hsl(var(--ink) / 0.1) 100%)" }} />
       <div className="container relative grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
-          <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-bone/50 mb-6" data-reveal>
+          <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50 mb-6" data-reveal>
             <span className="h-px w-8 bg-gold" /> Contact Us
           </div>
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.05]" data-reveal>
             We are available to speak.
           </h2>
-          <p className="mt-8 text-bone/65 leading-relaxed max-w-md" data-reveal>
+          <p className="mt-8 text-ink/65 leading-relaxed max-w-md" data-reveal>
             Whether you have an active matter, a question about our practice, or are exploring a long-term advisory relationship, we are available to speak with prospective and existing clients, referral counsel, and professional intermediaries.
           </p>
 
           <dl className="mt-12 space-y-6" data-stagger>
-            <div data-stagger-item className="border-t border-bone/15 pt-4">
+            <div data-stagger-item className="border-t border-ink/15 pt-4">
               <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-2">Mumbai - Principal Office</dt>
               <dd className="font-serif text-lg leading-snug">
                 Lexavant LLP<br />
@@ -42,22 +42,22 @@ export const Contact = () => {
                 New Marine Lines,<br />
                 Mumbai - 400020
               </dd>
-              <dd className="font-mono text-sm mt-3 text-bone/70">+91 7774089444 | +44 7867222719</dd>
-              <dd className="font-mono text-sm mt-1 text-bone/70">advchaitanya@lexavant.com</dd>
+              <dd className="font-mono text-sm mt-3 text-ink/70">+91 7774089444 | +44 7867222719</dd>
+              <dd className="font-mono text-sm mt-1 text-ink/70">info@lexavant.com</dd>
             </div>
-            
-            <div data-stagger-item className="grid grid-cols-3 gap-4 border-t border-bone/15 pt-4">
+
+            <div data-stagger-item className="grid grid-cols-3 gap-4 border-t border-ink/15 pt-4">
               <div>
                 <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-1">London</dt>
-                <dd className="text-sm text-bone/60">[Address]</dd>
+                <dd className="text-sm text-ink/60">[Address]</dd>
               </div>
               <div>
                 <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-1">Delhi</dt>
-                <dd className="text-sm text-bone/60">[Address]</dd>
+                <dd className="text-sm text-ink/60">[Address]</dd>
               </div>
               <div>
                 <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-1">Aurangabad</dt>
-                <dd className="text-sm text-bone/60">[Address]</dd>
+                <dd className="text-sm text-ink/60">[Address]</dd>
               </div>
             </div>
           </dl>
@@ -66,51 +66,51 @@ export const Contact = () => {
         <form onSubmit={onSubmit} className="lg:col-span-6 lg:col-start-7 space-y-8" data-reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="group">
-              <label htmlFor="name" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Full Name</label>
-              <input required id="name" name="name" type="text" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 font-serif text-lg" />
+              <label htmlFor="name" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-2">Full Name</label>
+              <input required id="name" name="name" type="text" className="w-full bg-transparent border-b border-ink/25 focus:border-gold py-3 text-ink placeholder-ink/30 outline-none transition-colors duration-500 font-serif text-lg" />
             </div>
             <div className="group">
-              <label htmlFor="organisation" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Organisation (Optional)</label>
-              <input id="organisation" name="organisation" type="text" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 font-serif text-lg" />
+              <label htmlFor="organisation" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-2">Organisation (Optional)</label>
+              <input id="organisation" name="organisation" type="text" className="w-full bg-transparent border-b border-ink/25 focus:border-gold py-3 text-ink placeholder-ink/30 outline-none transition-colors duration-500 font-serif text-lg" />
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="group">
-              <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Email Address</label>
-              <input required id="email" name="email" type="email" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 font-serif text-lg" />
+              <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-2">Email Address</label>
+              <input required id="email" name="email" type="email" className="w-full bg-transparent border-b border-ink/25 focus:border-gold py-3 text-ink placeholder-ink/30 outline-none transition-colors duration-500 font-serif text-lg" />
             </div>
             <div className="group">
-              <label htmlFor="phone" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Phone Number</label>
-              <input required id="phone" name="phone" type="tel" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 font-serif text-lg" />
+              <label htmlFor="phone" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-2">Phone Number</label>
+              <input required id="phone" name="phone" type="tel" className="w-full bg-transparent border-b border-ink/25 focus:border-gold py-3 text-ink placeholder-ink/30 outline-none transition-colors duration-500 font-serif text-lg" />
             </div>
           </div>
 
           <div className="group">
-            <label htmlFor="enquiry" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Nature of Enquiry</label>
-            <select required id="enquiry" name="enquiry" defaultValue="" className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone outline-none transition-colors duration-500 font-serif text-lg appearance-none cursor-pointer">
-              <option value="" disabled className="text-ink">Select an option</option>
-              <option value="General Enquiry" className="text-ink">General Enquiry</option>
-              <option value="Litigation & Disputes" className="text-ink">Litigation & Disputes</option>
-              <option value="Corporate & M&A" className="text-ink">Corporate & M&A</option>
-              <option value="TMEG" className="text-ink">Technology, Media, Entertainment & Gaming</option>
-              <option value="Private Client" className="text-ink">Private Client</option>
-              <option value="Banking & Finance" className="text-ink">Banking & Finance</option>
-              <option value="Others" className="text-ink">Others</option>
+            <label htmlFor="enquiry" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-2">Nature of Enquiry</label>
+            <select required id="enquiry" name="enquiry" defaultValue="" className="w-full bg-transparent border-b border-ink/25 focus:border-gold py-3 text-ink outline-none transition-colors duration-500 font-serif text-lg appearance-none cursor-pointer">
+              <option value="" disabled>Select an option</option>
+              <option value="General Enquiry">General Enquiry</option>
+              <option value="Litigation & Disputes">Litigation & Disputes</option>
+              <option value="Corporate & M&A">Corporate & M&A</option>
+              <option value="TMEG">Technology, Media, Entertainment & Gaming</option>
+              <option value="Private Client">Private Client</option>
+              <option value="Banking & Finance">Banking & Finance</option>
+              <option value="Others">Others</option>
             </select>
           </div>
 
           <div>
-            <label htmlFor="msg" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Brief Description of Matter</label>
-            <textarea required id="msg" name="msg" rows={4} className="w-full bg-transparent border-b border-bone/25 focus:border-gold py-3 text-bone placeholder-bone/30 outline-none transition-colors duration-500 resize-none font-serif text-lg" />
+            <label htmlFor="msg" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-2">Brief Description of Matter</label>
+            <textarea required id="msg" name="msg" rows={4} className="w-full bg-transparent border-b border-ink/25 focus:border-gold py-3 text-ink placeholder-ink/30 outline-none transition-colors duration-500 resize-none font-serif text-lg" />
           </div>
 
-          <button type="submit" disabled={sending} className="group w-full md:w-auto inline-flex items-center justify-center gap-3 bg-gold text-ink rounded-full pl-8 pr-3 py-3 font-mono text-xs uppercase tracking-[0.2em] hover:bg-bone transition-all duration-500 disabled:opacity-60">
+          <button type="submit" disabled={sending} className="group w-full md:w-auto inline-flex items-center justify-center gap-3 bg-gold text-ink rounded-full pl-8 pr-3 py-3 font-mono text-xs uppercase tracking-[0.2em] hover:bg-ink hover:text-bone transition-all duration-500 disabled:opacity-60">
             {sending ? "Submitting…" : "Submit Enquiry"}
-            <span className="grid place-items-center h-9 w-9 rounded-full bg-ink text-gold transition-transform group-hover:rotate-45">↗</span>
+            <span className="grid place-items-center h-9 w-9 rounded-full bg-bone text-gold transition-transform group-hover:rotate-45">↗</span>
           </button>
 
-          <p className="text-bone/40 text-[11px] leading-relaxed font-mono">
+          <p className="text-ink/40 text-[11px] leading-relaxed font-mono">
             Submission of this form does not create a lawyer–client relationship. All information shared will be treated with discretion and reviewed by our team within two business days.
           </p>
         </form>

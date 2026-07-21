@@ -45,18 +45,18 @@ const StickyCard_001 = ({
           scale,
           top: `calc(-5vh + ${i * 20 + 250}px)`,
         }}
-        className="rounded-[2rem] relative -top-1/4 flex w-full max-w-6xl origin-top flex-col overflow-hidden bg-ink border border-bone/15 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:bg-[#0c0c0c]"
+        className="rounded-[2rem] relative -top-1/4 flex w-full max-w-6xl origin-top flex-col overflow-hidden bg-bone border border-ink/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] transition-colors duration-500 hover:bg-white"
       >
         <Link to={to} className="w-full block group relative px-6 py-10 md:px-12 md:py-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start md:items-center">
             <span className="md:col-span-1 font-mono text-xs text-gold tracking-widest">{n}</span>
-            <h3 className="md:col-span-4 font-serif text-2xl md:text-3xl tracking-tight transition-transform duration-500 group-hover:translate-x-3 text-bone">
+            <h3 className="md:col-span-4 font-serif text-2xl md:text-3xl tracking-tight transition-transform duration-500 group-hover:translate-x-3 text-ink">
               {title}
             </h3>
-            <p className="md:col-span-4 text-bone/60 text-sm leading-relaxed">{desc}</p>
+            <p className="md:col-span-4 text-ink/70 text-sm leading-relaxed">{desc}</p>
             <div className="hidden md:flex md:col-span-2 flex-wrap gap-1.5 justify-end">
               {tags.map((t: string) => (
-                <span key={t} className="font-mono text-[10px] uppercase tracking-wider text-bone/50 border border-bone/20 rounded-full px-2.5 py-1">
+                <span key={t} className="font-mono text-[10px] uppercase tracking-wider text-ink/60 border border-ink/20 rounded-full px-2.5 py-1">
                   {t}
                 </span>
               ))}
@@ -82,16 +82,16 @@ export const Services = () => {
       <main
         id="services"
         ref={container}
-        className="relative flex w-full flex-col items-center justify-center pb-[100vh] pt-[50vh] bg-ink grain px-4"
+        className="relative flex w-full flex-col items-center justify-center pb-[100vh] pt-[50vh] bg-bone px-4"
       >
         <div className="absolute left-1/2 top-[10%] grid -translate-x-1/2 content-start justify-items-center gap-6 text-center z-10 pointer-events-none w-full px-4">
-          <div className="flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-bone/50 mb-2">
+          <div className="flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50 mb-2">
             <span className="h-px w-8 bg-gold" /> 02 — Practice Areas <span className="h-px w-8 bg-gold hidden md:block" />
           </div>
-          <h2 className="font-serif text-4xl md:text-7xl text-bone leading-[1.05]">
+          <h2 className="font-serif text-4xl md:text-7xl text-ink leading-[1.05]">
             What We Do.
           </h2>
-          <span className="after:from-ink after:to-bone relative max-w-[20ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:mt-4 after:h-16 after:w-px after:bg-gradient-to-b after:content-[''] text-bone tracking-widest mt-4">
+          <span className="after:from-bone after:to-ink relative max-w-[20ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:mt-4 after:h-16 after:w-px after:bg-gradient-to-b after:content-[''] text-ink tracking-widest mt-4">
             scroll down
           </span>
         </div>

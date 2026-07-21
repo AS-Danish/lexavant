@@ -11,7 +11,7 @@ export default function Litigation() {
         italic="Resolution."
         subtitle="Disputes are decided long before the hearing in the quality of the strategy, the discipline of the record, and the judgment of the counsel who carry them. Lexavant’s disputes practice was built on that conviction."
       />
-      
+
       <section className="bg-bone py-24 border-b border-ink/10">
         <div className="container grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
@@ -114,7 +114,7 @@ export default function Litigation() {
       <section className="bg-bone py-24">
         <div className="container">
           <h2 className="font-serif text-3xl md:text-4xl text-ink mb-16 text-center">Counsel – Our Litigation & Disputes Team</h2>
-          
+
           <div className="max-w-4xl mx-auto space-y-16">
             {[
               {
@@ -214,7 +214,7 @@ export default function Litigation() {
               </div>
               <div className="flex flex-col md:flex-row gap-2 md:gap-8">
                 <span className="text-gold w-32 shrink-0">EMAIL</span>
-                <a href="mailto:advchaitanya@lexavant.com" className="text-bone hover:text-gold transition-colors">advchaitanya@lexavant.com</a>
+                <a href="mailto:info@lexavant.com" className="text-bone hover:text-gold transition-colors">info@lexavant.com</a>
               </div>
             </div>
           </div>
