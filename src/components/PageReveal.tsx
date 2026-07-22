@@ -139,7 +139,7 @@ export const PageReveal = () => {
     >
       <div
         ref={overlayRef}
-        className="absolute inset-0 bg-ink pointer-events-auto" // Fully dark background during loading
+        className="absolute inset-0 bg-bone pointer-events-auto" // Light background during loading
       />
       <div className="relative z-10 flex flex-col items-center justify-center">
         <div className="relative flex items-center justify-center w-24 h-24">
@@ -157,12 +157,12 @@ export const PageReveal = () => {
         
         {/* Premium Typography Counter */}
         <div className="absolute top-32 flex flex-col items-center gap-3 w-max">
-          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-bone/60">
+          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60">
             Welcome to Lexavant LLP
           </span>
           <div
             ref={counterRef}
-            className="font-display text-5xl md:text-6xl text-bone"
+            className="font-display text-5xl md:text-6xl text-ink"
           >
             0%
           </div>
