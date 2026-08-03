@@ -17,7 +17,7 @@ export const PageReveal = () => {
     }
 
     if (!wrapperRef.current) return;
-    
+
     // Lock scroll during animation
     document.body.style.overflow = "hidden";
 
@@ -32,7 +32,7 @@ export const PageReveal = () => {
 
     // Initial setup: move dot offscreen top
     gsap.set([dotRef.current, outerDotRef.current], { y: -window.innerHeight });
-    
+
     // Drop in the dot
     tl.to([dotRef.current, outerDotRef.current], {
       y: 0,
@@ -47,7 +47,7 @@ export const PageReveal = () => {
       duration: 1.5,
       yoyo: true,
       repeat: -1,
-      ease: "sine.inOut", 
+      ease: "sine.inOut",
     });
 
     // The counter animation
@@ -68,14 +68,14 @@ export const PageReveal = () => {
       breathTw.kill();
       // Expand the outer ring to create a ripple out effect
       gsap.to(outerDotRef.current, { scale: 20, opacity: 0, duration: 0.8, ease: "power2.out" });
-      
+
       // Fire the global event to start Nav and Hero animations exactly at 100%
       if (!document.body.classList.contains("reveal-finished")) {
         document.body.classList.add("reveal-finished");
         window.dispatchEvent(new Event("reveal-finished"));
       }
     });
-    
+
     // Hide logo initially (in the actual DOM) so we can fade it in when dot lands
     // Removed: We let the logo fade in naturally with the header so it's visible as the dot travels.
 
@@ -154,7 +154,7 @@ export const PageReveal = () => {
             className="absolute w-3 h-3 bg-[#f97316] rounded-full shadow-[0_0_12px_rgba(249,115,22,0.8)]"
           />
         </div>
-        
+
         {/* Premium Typography Counter */}
         <div className="absolute top-32 flex flex-col items-center gap-3 w-max">
           <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60">

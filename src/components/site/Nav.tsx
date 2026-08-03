@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 import logo from "@/assets/lexavant-logo.png";
 
 const regularLinks = [
@@ -25,13 +28,36 @@ const rightLinks = [
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isDarkBg, setIsDarkBg] = useState(true);
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // GSAP ScrollTrigger Theme Detection (works with pins and horizontal scroll)
+    const elements = document.querySelectorAll('[data-theme]');
+    const triggers: ScrollTrigger[] = [];
     
+    if (elements.length > 0) {
+      elements.forEach((el) => {
+        const trigger = ScrollTrigger.create({
+          trigger: el,
+          start: "top 80px", // Trigger when top of section hits bottom of 80px navbar
+          end: "bottom 80px",
+          onEnter: () => setIsDarkBg(el.getAttribute('data-theme') === 'dark'),
+          onEnterBack: () => setIsDarkBg(el.getAttribute('data-theme') === 'dark'),
+        });
+        triggers.push(trigger);
+      });
+    } else {
+      setIsDarkBg(pathname === "/" || window.scrollY <= 24);
+    }
+
     // Entrance animation
     const initNavAnimation = () => {
       const tl = gsap.timeline();
@@ -40,12 +66,12 @@ export const Nav = () => {
         { y: -150 },
         { y: 0, duration: 0.6, ease: "expo.out" }
       )
-      .fromTo(
-        ".nav-links li, .nav-mobile-btn",
-        { y: -100 },
-        { y: 0, duration: 0.6, stagger: 0.05, ease: "back.out(1.2)" },
-        "-=0.3"
-      );
+        .fromTo(
+          ".nav-links li, .nav-mobile-btn",
+          { y: -100 },
+          { y: 0, duration: 0.6, stagger: 0.05, ease: "back.out(1.2)" },
+          "-=0.3"
+        );
     };
 
     if (document.body.classList.contains("reveal-finished")) {
@@ -56,11 +82,13 @@ export const Nav = () => {
       window.addEventListener("reveal-finished", initNavAnimation, { once: true });
     }
 
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      triggers.forEach(t => t.kill());
+    };
+  }, [pathname]);
 
   const isHome = pathname === "/";
-  const isDarkBg = isHome || !scrolled;
 
   const NavLink = ({ l }: { l: { label: string; to: string } }) => {
     const active = pathname === l.to;
@@ -68,9 +96,8 @@ export const Nav = () => {
       <Link
         to={l.to}
         onClick={() => setOpen(false)}
-        className={`relative py-1 transition-colors ${isDarkBg ? 'hover:text-bone' : 'hover:text-ink'} after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:bg-gold after:transition-all ${
-          active ? (isDarkBg ? "text-bone after:w-full" : "text-ink after:w-full") : "after:w-0 hover:after:w-full"
-        } ${isDarkBg && !active ? 'text-bone/70' : ''}`}
+        className={`relative py-1 transition-colors ${isDarkBg ? 'hover:text-bone' : 'hover:text-ink'} after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:bg-gold after:transition-all ${active ? (isDarkBg ? "text-bone after:w-full" : "text-ink after:w-full") : "after:w-0 hover:after:w-full"
+          } ${isDarkBg && !active ? 'text-bone/70' : ''}`}
       >
         {l.label}
       </Link>
@@ -79,20 +106,18 @@ export const Nav = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled 
-          ? isHome 
-            ? "bg-ink/90 backdrop-blur-xl border-b border-bone/10" 
-            : "bg-bone/90 backdrop-blur-xl border-b border-ink/10"
-          : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-[100] transition-colors duration-500 backdrop-blur-xl ${
+        isDarkBg
+          ? "bg-ink/80 border-b border-bone/10"
+          : "bg-bone/80 border-b border-ink/10"
       }`}
     >
       <nav className="container flex items-center py-5 relative">
         <div className="flex-1 nav-logo-container">
           <Link to="/" className="inline-flex items-center gap-2 group">
-            <img 
-              src={logo} 
-              alt="Lexavant" 
+            <img
+              src={logo}
+              alt="Lexavant"
               className={`h-16 md:h-20 w-auto object-contain scale-110 origin-left transition-all duration-500 ${isDarkBg ? 'invert brightness-0' : ''}`}
               style={isDarkBg ? { filter: "invert(1) brightness(1.5)" } : {}}
             />
@@ -113,9 +138,9 @@ export const Nav = () => {
             <div className="absolute top-full pt-2 left-1/2 -translate-x-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 w-72">
               <div className="bg-bone border border-ink/10 shadow-noir p-1.5 flex flex-col gap-0.5 rounded-sm">
                 {practiceAreas.map((p) => (
-                  <Link 
-                    key={p.to} 
-                    to={p.to} 
+                  <Link
+                    key={p.to}
+                    to={p.to}
                     className="block px-4 py-2.5 font-sans text-[13px] tracking-normal normal-case text-ink/80 hover:bg-ink/5 hover:text-ink transition-colors rounded-sm leading-snug"
                   >
                     {p.label}
@@ -140,9 +165,8 @@ export const Nav = () => {
       </nav>
 
       {open && (
-        <div className={`md:hidden animate-fade-in max-h-[80vh] overflow-y-auto ${
-          isDarkBg ? "bg-ink border-t border-bone/10" : "bg-bone border-t border-ink/10"
-        }`}>
+        <div className={`md:hidden animate-fade-in max-h-[80vh] overflow-y-auto ${isDarkBg ? "bg-ink border-t border-bone/10" : "bg-bone border-t border-ink/10"
+          }`}>
           <ul className="container py-6 flex flex-col gap-5 font-mono text-xs uppercase tracking-[0.18em]">
             {regularLinks.map((l) => (
               <li key={l.to}>
@@ -151,7 +175,7 @@ export const Nav = () => {
                 </Link>
               </li>
             ))}
-            
+
             <li className={`pt-2 pb-1 border-b ${isDarkBg ? 'border-bone/5' : 'border-ink/5'}`}>
               <span className="text-gold">PRACTICE AREAS</span>
             </li>

@@ -8,6 +8,7 @@
 
 @layer base {
   :root {
+    --nav-height: 80px;
     --background: 30 8% 95%;
     --foreground: 0 0% 8%;
 
