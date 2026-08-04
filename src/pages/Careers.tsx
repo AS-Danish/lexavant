@@ -59,7 +59,6 @@ export default function CareersPage() {
         <div className="container grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-8 space-y-12">
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Opening Statement</h2>
               <div className="space-y-4 text-ink/75 leading-relaxed text-lg">
                 <p>
                   At Lexavant, associates and junior professionals are expected to contribute substantively from an early stage. You will work alongside senior advocates and partners on live matters, develop your own areas of expertise, and be given the opportunity to grow in an environment that takes professional development seriously.

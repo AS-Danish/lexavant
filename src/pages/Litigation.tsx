@@ -19,7 +19,7 @@ export default function Litigation() {
           </div>
           <div className="lg:col-span-8 space-y-6 text-ink/70 leading-relaxed text-lg">
             <p>
-              We are a full-service litigation and dispute-resolution practice that combines decades of courtroom experience at the constitutional courts with a modern, cross-border commercial and technology bench. Led from the Mumbai office and supported from London, Delhi and Aurangabad, we appear before every level of the Indian judiciary and the country’s specialised tribunals, and we co-ordinate disputes across the United Kingdom, the European Union, the United States, the Middle East and Southeast Asia.
+              We are a full-service litigation and dispute-resolution practice that combines decades of courtroom experience at the constitutional courts with a modern, cross-border commercial and technology bench. Led from the Mumbai office and supported from London and Delhi, we appear before every level of the Indian judiciary and the country’s specialised tribunals, and we co-ordinate disputes across the United Kingdom, the European Union, the United States, the Middle East and Southeast Asia.
             </p>
             <p>
               Our clients range from multinational corporations, banks and financial institutions, public-sector undertakings and government bodies to founders, family enterprises, trusts, co-operatives and individuals. Whatever the forum and whatever the stakes, our promise is the same: partner-led attention, a clear strategy aligned to your commercial objective, and advocacy of the highest standard.
@@ -206,7 +206,7 @@ export default function Litigation() {
             <div className="space-y-4 font-mono text-sm tracking-wide">
               <div className="flex flex-col md:flex-row gap-2 md:gap-8">
                 <span className="text-gold w-32 shrink-0">OFFICES</span>
-                <span className="text-bone/80">London | Mumbai | Delhi | Aurangabad</span>
+                <span className="text-bone/80">London | Mumbai | Delhi</span>
               </div>
               <div className="flex flex-col md:flex-row gap-2 md:gap-8">
                 <span className="text-gold w-32 shrink-0">TELEPHONE</span>

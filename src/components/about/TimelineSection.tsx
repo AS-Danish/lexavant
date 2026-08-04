@@ -14,7 +14,7 @@ const milestones = [
   {
     year: "Presence",
     title: "Global Reach",
-    desc: "The firm has established offices in Mumbai, Delhi, Aurangabad, and London, offering seamless connectivity for cross-border mandates."
+    desc: "The firm has established offices in Mumbai, Delhi, and London, offering seamless connectivity for cross-border mandates."
   },
   {
     year: "Expertise",
@@ -64,7 +64,7 @@ const TiltCard = ({ milestone, index }: { milestone: typeof milestones[0], index
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-[300px] md:w-[450px] h-[400px] shrink-0 rounded-sm border border-bone/20 bg-ink p-8 md:p-12 flex flex-col cursor-crosshair group overflow-hidden"
+      className="relative w-[320px] md:w-[480px] h-[450px] shrink-0 rounded-sm border border-bone/20 bg-ink p-10 md:p-16 flex flex-col cursor-crosshair group overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-bone/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       <div style={{ transform: "translateZ(30px)" }}>
@@ -110,9 +110,9 @@ export const TimelineSection = () => {
   }, []);
 
   return (
-    <section ref={containerRef} data-theme="dark" className="h-screen w-full bg-ink text-bone overflow-hidden flex flex-col justify-center relative pt-20">
-      <div className="absolute top-20 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-      <div className="container mx-auto px-6 mb-16 md:mb-24 shrink-0">
+    <section ref={containerRef} data-theme="dark" className="h-[120vh] w-full bg-ink text-bone overflow-hidden flex flex-col justify-center relative pt-32 pb-20">
+      <div className="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      <div className="container mx-auto px-8 md:px-16 mb-16 md:mb-24 shrink-0">
         <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-bone/50 mb-6">
           <span className="h-px w-8 bg-gold" /> The Firm
         </div>
@@ -125,7 +125,7 @@ export const TimelineSection = () => {
       <div className="w-full overflow-visible">
         <div 
           ref={scrollWrapperRef} 
-          className="flex gap-8 md:gap-16 px-6 md:px-12 w-max items-center py-12"
+          className="flex gap-10 md:gap-20 px-8 md:px-16 w-max items-center py-16"
         >
           {milestones.map((milestone, idx) => (
             <TiltCard key={idx} milestone={milestone} index={idx} />

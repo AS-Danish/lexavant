@@ -1,14 +1,16 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { ReactLenis } from "lenis/react";
+import { ReactLenis, useLenis } from "lenis/react";
 
 import { DisclaimerModal } from "@/components/site/DisclaimerModal";
 import { PageReveal } from "@/components/PageReveal";
 import { CustomCursor } from "@/components/CustomCursor";
 import { GlobalScrollAnimations } from "@/components/GlobalScrollAnimations";
+import { ScrollToTopButton } from "@/components/site/ScrollToTopButton";
 
 import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
@@ -24,6 +26,28 @@ import Team from "./pages/Team.tsx";
 
 const queryClient = new QueryClient();
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  const lenis = useLenis();
+
+  useEffect(() => {
+    // Disable browser's default scroll restoration
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useEffect(() => {
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, lenis]);
+
+  return null;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -34,6 +58,8 @@ const App = () => (
         <Sonner />
         <DisclaimerModal />
         <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+          <ScrollToTop />
+          <ScrollToTopButton />
           <GlobalScrollAnimations />
           <Routes>
             <Route path="/" element={<Index />} />

@@ -97,9 +97,10 @@ export default function KnowledgeHub() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16">
             {filteredArticles.map((article) => (
               <article key={article.id} className="group cursor-pointer flex flex-col h-full">
-                <div className="mb-4 overflow-hidden rounded-sm aspect-[1.6/1] bg-ink/5 relative">
+                <div className="mb-4 overflow-hidden rounded-sm aspect-[1.6/1] bg-ink/5 relative border border-ink/5">
+                  <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop" alt="Article placeholder" className="absolute inset-0 w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" />
                   <div className="absolute inset-0 bg-ink/5 group-hover:bg-transparent transition-colors duration-500" />
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-bone rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-bone rounded-full flex items-center justify-center z-10 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out shadow-sm">
                     <ArrowUpRight size={18} className="text-ink" />
                   </div>
                 </div>

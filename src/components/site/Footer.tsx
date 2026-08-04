@@ -33,7 +33,7 @@ const cols: { h: string; l: { label: string; to: string }[] }[] = [
       { label: "+91 7774 089 444", to: "tel:+917774089444" },
       { label: "+44 7867 222 719", to: "tel:+447867222719" },
       { label: "info@lexavant.com", to: "mailto:info@lexavant.com" },
-      { label: "London | Mumbai | Delhi | Aurangabad", to: "/contact" },
+      { label: "London | Mumbai | Delhi", to: "/contact" },
     ],
   },
 ];

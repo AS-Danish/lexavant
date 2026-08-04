@@ -16,6 +16,18 @@ const Index = () => {
         <Hero />
         <Services />
         
+        {/* Featured Video Gap */}
+        <section className="bg-bone w-full border-t border-ink/10">
+          <div className="w-full aspect-video md:aspect-[21/9] bg-ink/5 relative overflow-hidden shadow-2xl">
+            <iframe 
+              src="https://www.youtube.com/embed/y9j-BL5ocW8?autoplay=1&mute=1&controls=0&loop=1&playlist=y9j-BL5ocW8&modestbranding=1&playsinline=1"
+              allow="autoplay; encrypted-media"
+              className="absolute inset-0 w-full h-[150%] top-[-25%] object-cover grayscale opacity-90 pointer-events-none"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent pointer-events-none" />
+          </div>
+        </section>
+        
         {/* Ethos Statement Section */}
         <section className="bg-bone text-ink py-24 border-y border-ink/10">
           <div className="container text-center">

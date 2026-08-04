@@ -1,32 +1,47 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-const teamMembers = [
+import { Link } from "react-router-dom";
+
+const teamGroups = [
   {
-    name: "Adv. Ajay Gajanan Talhar",
-    title: "Founding Partner",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+    category: "Litigation Counsel",
+    link: "/practice-areas/litigation-and-dispute-resolution",
+    members: [
+      { name: "Adv. Ajay Talhar", title: "Litigation", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" },
+      { name: "Adv. Chaitanya Talhar", title: "Litigation", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" },
+      { name: "Adv. Pramod Gaikwad", title: "Litigation", image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" },
+      { name: "Adv. Tushar Daware", title: "Litigation", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" },
+      { name: "Adv. Darshan Sahuji", title: "Litigation", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" },
+      { name: "Adv. Yashwant Chaudhary", title: "Litigation", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" }
+    ]
   },
   {
-    name: "Adv. Chaitanya Talhar",
-    title: "Managing Partner",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop"
+    category: "Data Privacy Counsel",
+    link: "/practice-areas/data-privacy",
+    members: [
+      { name: "Adv. Apurva Doshi", title: "Data Privacy", image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" }
+    ]
   },
   {
-    name: "Adv. Pramod Gaikwad",
-    title: "Senior Partner",
-    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop"
+    category: "TMEG Counsel",
+    link: "/practice-areas/technology-media-entertainment-gaming",
+    members: [
+      { name: "Adv. Raashi Vaishya", title: "TMEG", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" }
+    ]
   },
   {
-    name: "Adv. Prakshit Baid",
-    title: "Corporate Lawyer",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+    category: "Corporate Team Counsel",
+    link: "/practice-areas/corporate-ma-private-client-securities-law",
+    members: [
+      { name: "Adv. Prakshit Baid", title: "Corporate", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" }
+    ]
   }
 ];
 
-const TeamCard = ({ member, index }: { member: typeof teamMembers[0], index: number }) => {
+const TeamCard = ({ member, index, link }: { member: any, index: number, link: string }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "50px" });
   const controls = useAnimation();
   const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -44,7 +59,8 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0], index: num
   };
 
   return (
-    <motion.div 
+    <Link to={link} className="block w-full h-full">
+      <motion.div 
       ref={ref}
       className="relative aspect-[3/4] overflow-hidden group cursor-none"
       onMouseEnter={() => setIsHovered(true)}
@@ -87,7 +103,8 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0], index: num
       >
         View Profile
       </motion.div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };
 
@@ -107,9 +124,21 @@ export const TeamGrid = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {teamMembers.map((member, idx) => (
-            <TeamCard key={idx} member={member} index={idx} />
+        <div className="flex flex-col gap-12">
+          {teamGroups.map((group, groupIdx) => (
+            <div key={groupIdx}>
+              <div className="flex items-center justify-between mb-8 border-b border-ink/10 pb-4">
+                 <h3 className="font-serif text-3xl text-ink">{group.category}</h3>
+                 <Link to={group.link} className="font-mono text-xs uppercase tracking-widest text-gold hover:text-ink transition-colors flex items-center gap-2">
+                   View Practice <span className="text-lg leading-none">&rarr;</span>
+                 </Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                {group.members.map((member, idx) => (
+                  <TeamCard key={idx} member={member} index={idx} link={group.link} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -156,7 +156,7 @@ export default function Corporate() {
             <div className="space-y-4 font-mono text-sm tracking-wide">
               <div className="flex flex-col md:flex-row gap-2 md:gap-8">
                 <span className="text-gold w-32 shrink-0">OFFICES</span>
-                <span className="text-bone/80">London | Mumbai | Delhi | Aurangabad</span>
+                <span className="text-bone/80">London | Mumbai | Delhi</span>
               </div>
               <div className="flex flex-col md:flex-row gap-2 md:gap-8">
                 <span className="text-gold w-32 shrink-0">TELEPHONE</span>

@@ -19,7 +19,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-bone text-ink py-28 md:py-40 relative overflow-hidden">
+    <section id="contact" className="bg-bone text-ink py-32 md:py-48 relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none opacity-20" style={{ background: "radial-gradient(ellipse at center, transparent 40%, hsl(var(--ink) / 0.1) 100%)" }} />
       <div className="container relative grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
@@ -46,18 +46,14 @@ export const Contact = () => {
               <dd className="font-mono text-sm mt-1 text-ink/70">info@lexavant.com</dd>
             </div>
 
-            <div data-stagger-item className="grid grid-cols-3 gap-4 border-t border-ink/15 pt-4">
+            <div data-stagger-item className="grid grid-cols-2 gap-4 border-t border-ink/15 pt-4">
               <div>
                 <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-1">London</dt>
                 <dd className="text-sm text-ink/60">[Address]</dd>
               </div>
               <div>
                 <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-1">Delhi</dt>
-                <dd className="text-sm text-ink/60">[Address]</dd>
-              </div>
-              <div>
-                <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-1">Aurangabad</dt>
-                <dd className="text-sm text-ink/60">[Address]</dd>
+                <dd className="text-sm text-ink/60">World Trade Centre, Lalit Hotel, Babar Road, Connaught Place, New Delhi - 110001</dd>
               </div>
             </div>
           </dl>
