@@ -7,11 +7,24 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { useLenis } from "lenis/react";
 
 export function DisclaimerModal() {
   const [open, setOpen] = useState(false);
   const [hasRead, setHasRead] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const lenis = useLenis();
+
+  useEffect(() => {
+    if (open) {
+      lenis?.stop();
+    } else {
+      lenis?.start();
+    }
+    return () => {
+      lenis?.start();
+    };
+  }, [open, lenis]);
 
   useEffect(() => {
     const hasAgreed = localStorage.getItem("lexavant_disclaimer_agreed");
@@ -57,6 +70,7 @@ export function DisclaimerModal() {
           ref={scrollRef}
           onScroll={handleScroll}
           className="flex-1 overflow-y-auto p-6 text-sm text-foreground/90 font-sans"
+          data-lenis-prevent="true"
         >
           <div className="space-y-6">
             <section>

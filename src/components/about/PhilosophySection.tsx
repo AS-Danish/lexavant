@@ -18,14 +18,14 @@ export const PhilosophySection = () => {
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
-        end: "+=150%", // Keep it pinned for 1.5x screen height
+        end: "+=300%", // Increased scroll distance so it doesn't unpin too soon
         pin: true,
         animation: gsap.to(words, {
           opacity: 1,
           stagger: 0.1,
           ease: "none"
         }),
-        scrub: 1,
+        scrub: 0.5, // Reduced scrub lag
         anticipatePin: 1
       });
     }, containerRef);
@@ -40,7 +40,7 @@ export const PhilosophySection = () => {
       <div className="container max-w-5xl mx-auto px-6">
         <h2 
           ref={textRef} 
-          className="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.3] text-ink"
+          className="font-serif text-xl md:text-3xl lg:text-4xl leading-[1.3] text-ink"
         >
           {content.split(' ').map((word, i) => (
             <span key={i} className="word opacity-20 inline-block mr-[0.3em] mb-[0.1em]">

@@ -26,23 +26,25 @@ import Team from "./pages/Team.tsx";
 
 const queryClient = new QueryClient();
 
+if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   const lenis = useLenis();
 
   useEffect(() => {
-    // Disable browser's default scroll restoration
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-  }, []);
-
-  useEffect(() => {
-    if (lenis) {
-      lenis.scrollTo(0, { immediate: true });
-    } else {
-      window.scrollTo(0, 0);
-    }
+    // Slight delay to ensure DOM layout is complete before scrolling
+    const timer = setTimeout(() => {
+      if (lenis) {
+        lenis.scrollTo(0, { immediate: true, force: true });
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }
+    }, 50);
+    
+    return () => clearTimeout(timer);
   }, [pathname, lenis]);
 
   return null;

@@ -79,40 +79,40 @@ export const Services = () => {
   });
 
   return (
-      <main
-        id="services"
-        ref={container}
-        className="relative flex w-full flex-col items-center justify-center pb-[100vh] pt-[50vh] bg-bone px-4"
-      >
-        <div className="absolute left-1/2 top-[10%] grid -translate-x-1/2 content-start justify-items-center gap-6 text-center z-10 pointer-events-none w-full px-4">
-          <div className="flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50 mb-2">
-            <span className="h-px w-8 bg-gold" /> 02 — Practice Areas <span className="h-px w-8 bg-gold hidden md:block" />
-          </div>
-          <h2 className="font-serif text-4xl md:text-7xl text-ink leading-[1.05]">
-            What We Do.
-          </h2>
-          <span className="after:from-bone after:to-ink relative max-w-[20ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:mt-4 after:h-16 after:w-px after:bg-gradient-to-b after:content-[''] text-ink tracking-widest mt-4">
-            scroll down
-          </span>
+    <main
+      id="services"
+      ref={container}
+      className="relative flex w-full flex-col items-center justify-center pb-[50vh] pt-[50vh] bg-bone px-4"
+    >
+      <div className="absolute left-1/2 top-[10%] grid -translate-x-1/2 content-start justify-items-center gap-6 text-center z-10 pointer-events-none w-full px-4">
+        <div className="flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50 mb-2">
+          <span className="h-px w-8 bg-gold" /> 02 — Practice Areas <span className="h-px w-8 bg-gold hidden md:block" />
         </div>
-        <div className="w-full flex flex-col items-center z-20">
-          {services.map((project, i) => {
-            const targetScale = Math.max(
-              0.8,
-              1 - (services.length - i - 1) * 0.04,
-            );
-            return (
-              <StickyCard_001
-                key={`p_${i}`}
-                i={i}
-                {...project}
-                progress={scrollYProgress}
-                range={[i * 0.25, 1]}
-                targetScale={targetScale}
-              />
-            );
-          })}
-        </div>
-      </main>
+        <h2 className="font-serif text-4xl md:text-7xl text-ink leading-[1.05]">
+          What We Do.
+        </h2>
+        <span className="after:from-bone after:to-ink relative max-w-[20ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:mt-4 after:h-16 after:w-px after:bg-gradient-to-b after:content-[''] text-ink tracking-widest mt-4">
+          scroll down
+        </span>
+      </div>
+      <div className="w-full flex flex-col items-center z-20">
+        {services.map((project, i) => {
+          const targetScale = Math.max(
+            0.8,
+            1 - (services.length - i - 1) * 0.04,
+          );
+          return (
+            <StickyCard_001
+              key={`p_${i}`}
+              i={i}
+              {...project}
+              progress={scrollYProgress}
+              range={[i * 0.25, 1]}
+              targetScale={targetScale}
+            />
+          );
+        })}
+      </div>
+    </main>
   );
 };
