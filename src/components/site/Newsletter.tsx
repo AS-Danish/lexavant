@@ -32,6 +32,7 @@ export const Newsletter = () => {
 
   return (
     <section id="newsletter" className="relative bg-graphite text-bone py-24 md:py-32 overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute -bottom-[0.22em] left-1/2 -translate-x-1/2 whitespace-nowrap font-serif text-[clamp(6rem,20vw,20rem)] leading-none text-bone/[0.025]">THE BRIEF</div>
       <div className="container grid lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-6">
           <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-silver mb-6" data-reveal>

@@ -10,7 +10,7 @@ const Index = () => {
   const scope = useReveal();
 
   return (
-    <div ref={scope} className="bg-bone text-ink min-h-screen overflow-x-hidden">
+    <div ref={scope} className="modern-shell bg-bone text-ink min-h-screen overflow-x-clip">
       <Nav />
       <main>
         <Hero />
@@ -24,7 +24,8 @@ const Index = () => {
               loop
               muted
               playsInline
-              className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 pointer-events-none"
+              data-parallax="0.35"
+              className="absolute -inset-y-[12%] inset-x-0 w-full h-[124%] object-cover grayscale opacity-90 pointer-events-none scale-105"
             >
               <source src={featuredVideo} type="video/mp4" />
             </video>
@@ -35,7 +36,7 @@ const Index = () => {
         {/* Ethos Statement Section */}
         <section className="bg-bone text-ink py-24 border-y border-ink/10">
           <div className="container text-center">
-            <h2 className="font-serif text-3xl md:text-5xl max-w-4xl mx-auto leading-[1.2] italic gradient-gold-text">
+            <h2 className="font-serif text-4xl md:text-6xl max-w-5xl mx-auto leading-[1.08] italic gradient-gold-text tracking-[-0.04em]">
               “Built on foresight, strategy, precision, and an uncompromising standard of counsel.”
             </h2>
           </div>

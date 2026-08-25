@@ -10,6 +10,8 @@ export function useReveal() {
 
   useEffect(() => {
     if (!scope.current) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
     const ctx = gsap.context(() => {
       // Word/line reveals on [data-reveal]
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {

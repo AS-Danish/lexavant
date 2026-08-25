@@ -56,13 +56,14 @@ export default function Team() {
       
       <section className="bg-bone py-24">
         <div className="container">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger>
             {teamMembers.map((lawyer, i) => (
-              <div key={i} className="group border border-ink/10 bg-bone transition-colors hover:bg-ink hover:text-bone p-8 rounded-sm flex flex-col h-full">
-                <div className="w-16 h-16 shrink-0 bg-ink group-hover:bg-gold text-gold group-hover:text-ink flex items-center justify-center font-serif text-xl rounded-sm mb-6 transition-colors">
+              <div key={i} data-stagger-item data-depth-card className={`team-card group border border-ink/10 bg-bone/80 transition-colors hover:bg-ink hover:text-bone p-8 rounded-2xl flex flex-col min-h-[28rem] overflow-hidden relative ${i === 0 ? "lg:col-span-2" : ""}`}>
+                <span className="absolute right-6 top-5 font-mono text-[10px] tracking-[0.3em] text-ink/25 group-hover:text-bone/30">0{i + 1}</span>
+                <div className="w-16 h-16 shrink-0 bg-ink group-hover:bg-gold text-gold group-hover:text-ink flex items-center justify-center font-serif text-xl rounded-full mb-10 transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
                   {lawyer.init}
                 </div>
-                <h3 className="font-serif text-2xl mb-1">{lawyer.name}</h3>
+                <h3 className={`${i === 0 ? "md:text-4xl" : "text-2xl"} font-serif mb-1`}>{lawyer.name}</h3>
                 <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-gold-deep mb-6">{lawyer.title}</p>
                 <p className="opacity-75 leading-relaxed text-sm mb-6 flex-grow">{lawyer.desc}</p>
                 <div className="pt-6 border-t border-current/15 mt-auto">

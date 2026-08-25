@@ -41,7 +41,7 @@ export default function Litigation() {
               { t: "One firm, end-to-end", d: "Litigation, arbitration, regulatory defence, recovery and enforcement handled under one roof, with tax, corporate and technology advisory a desk away." },
               { t: "Built for cross-border", d: "We brief, manage and align local counsel across jurisdictions, and we enforce foreign judgments and awards in India and Indian awards abroad." },
             ].map((item, i) => (
-              <div key={i} className="border-t border-bone/20 pt-6">
+              <div key={i} data-depth-card className="capability-card border-t border-bone/20 pt-6">
                 <h3 className="font-serif text-xl md:text-2xl text-gold mb-3">— {item.t}</h3>
                 <p className="text-bone/70 leading-relaxed text-lg">{item.d}</p>
               </div>
@@ -68,7 +68,7 @@ export default function Litigation() {
               { title: "Insolvency, Bankruptcy & Restructuring", desc: "Full-spectrum representation under the Insolvency and Bankruptcy Code before the NCLT and NCLAT.", items: ["CIRP initiation and defence under Sections 7, 9 and 10", "Financial and operational creditors, resolution professionals and the CoC", "Liquidation, avoidance and preferential / undervalued-transaction actions", "Personal-guarantor insolvency and bankruptcy", "Pre-pack insolvency, distressed-asset acquisitions and NPA resolution", "Cross-border insolvency, asset tracing and recovery"] },
               { title: "Arbitration & Alternative Dispute Resolution", desc: "Domestic and international arbitration, from drafting the clause to enforcing the award.", items: ["Domestic and international commercial arbitration (institutional and ad hoc)", "Interim relief under Section 9 and emergency / tribunal-ordered measures", "Setting-aside and enforcement under Sections 34, 36 and 37", "Enforcement of foreign awards under the New York Convention", "Construction, infrastructure, EPC and concession arbitration", "Mediation, conciliation and structured settlement"] },
             ].map((cap, i) => (
-              <div key={i} className="border-t border-ink/15 pt-6">
+              <div key={i} data-depth-card className="capability-card border-t border-ink/15 pt-6">
                 <h3 className="font-serif text-xl text-ink mb-2">▪ {cap.title}</h3>
                 <p className="text-sm italic text-ink/60 mb-4">{cap.desc}</p>
                 <ul className="space-y-2">
@@ -102,7 +102,7 @@ export default function Litigation() {
               { k: "Arbitration & ADR", v: "Domestic & international arbitral tribunals (institutional & ad hoc) · Emergency arbitration · Mediation & conciliation" },
               { k: "International", v: "Co-ordinated proceedings and enforcement across the UK, EU, US, Middle East and Southeast Asia" },
             ].map((forum, i) => (
-              <div key={i} className="border-t border-bone/20 pt-6">
+              <div key={i} data-depth-card className="capability-card border-t border-bone/20 pt-6">
                 <h3 className="font-serif text-lg text-gold mb-2">{forum.k}</h3>
                 <p className="text-bone/70 text-sm leading-relaxed">{forum.v}</p>
               </div>

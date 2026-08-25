@@ -19,7 +19,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-bone text-ink py-32 md:py-48 relative overflow-hidden">
+    <section id="contact" className="contact-experience bg-bone text-ink py-32 md:py-48 relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none opacity-20" style={{ background: "radial-gradient(ellipse at center, transparent 40%, hsl(var(--ink) / 0.1) 100%)" }} />
       <div className="container relative grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
@@ -59,7 +59,7 @@ export const Contact = () => {
           </dl>
         </div>
 
-        <form onSubmit={onSubmit} className="lg:col-span-6 lg:col-start-7 space-y-8" data-reveal>
+        <form onSubmit={onSubmit} className="glass-contact-panel lg:col-span-6 lg:col-start-7 space-y-8 rounded-3xl border border-ink/10 bg-bone/70 p-7 md:p-10 shadow-soft backdrop-blur-xl" data-reveal data-depth-card>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="group">
               <label htmlFor="name" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-2">Full Name</label>

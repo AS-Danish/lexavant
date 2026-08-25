@@ -57,7 +57,7 @@ export default function CareersPage() {
       
       <section className="bg-bone py-24 border-b border-ink/10">
         <div className="container grid lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-8 space-y-12">
+          <div className="career-narrative lg:col-span-8 space-y-12">
             <div>
               <div className="space-y-4 text-ink/75 leading-relaxed text-lg">
                 <p>
@@ -114,7 +114,7 @@ export default function CareersPage() {
           </div>
           
           <div className="lg:col-span-4">
-            <div className="bg-ink p-8 border border-ink/10 shadow-sm rounded-sm relative overflow-hidden text-bone sticky top-32">
+            <div data-depth-card className="career-portal bg-ink p-8 border border-ink/10 shadow-noir rounded-3xl relative overflow-hidden text-bone sticky top-32">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-gold/10 to-transparent opacity-50 pointer-events-none" />
               <h2 className="font-serif text-2xl mb-2">Submit Application</h2>
               <p className="text-bone/60 mb-8 font-mono text-xs uppercase tracking-widest border-b border-bone/20 pb-6">Confidential Submission</p>
@@ -137,8 +137,8 @@ export default function CareersPage() {
 
                 <div className="group">
                   <label htmlFor="position" className="block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 mb-2">Role Applying For</label>
-                  <select required id="position" name="position" className="w-full bg-transparent border-b border-bone/20 focus:border-gold py-3 text-bone outline-none transition-colors duration-500 font-serif text-lg appearance-none cursor-pointer">
-                    <option value="" disabled selected className="text-ink">Select a role...</option>
+                  <select required id="position" name="position" defaultValue="" className="w-full bg-transparent border-b border-bone/20 focus:border-gold py-3 text-bone outline-none transition-colors duration-500 font-serif text-lg appearance-none cursor-pointer">
+                    <option value="" disabled className="text-ink">Select a role...</option>
                     <option value="Associate" className="text-ink">Associate</option>
                     <option value="Senior Associate" className="text-ink">Senior Associate</option>
                     <option value="Internship" className="text-ink">Internship</option>

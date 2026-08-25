@@ -44,7 +44,7 @@ export default function TechnologyMedia() {
               { title: "Intellectual Property", desc: "Protecting and monetizing creative and technological assets.", items: ["Trademark prosecution, portfolio management, and opposition proceedings", "Copyright registration, assignments, and infringement actions", "Patent advisory, filing strategy, and technology mapping", "Design registration and protection against piracy", "Domain name disputes and anti-cybersquatting actions", "IP due diligence for M&A and investment transactions"] },
               { title: "Fintech & Payment Systems", desc: "Regulatory advisory for financial technology innovations.", items: ["Payment aggregator and payment gateway (PA/PG) guidelines compliance", "Prepaid Payment Instruments (PPI) and digital wallet advisory", "Digital lending guidelines and co-lending structures", "Blockchain, Web3, and virtual digital asset (VDA) regulatory analysis", "RBI regulatory sandbox applications and compliance"] },
             ].map((cap, i) => (
-              <div key={i} className="border-t border-bone/15 pt-6">
+              <div key={i} data-depth-card className="capability-card border-t border-bone/15 pt-6">
                 <h3 className="font-serif text-xl text-gold mb-2">▪ {cap.title}</h3>
                 <p className="text-sm italic text-bone/60 mb-4">{cap.desc}</p>
                 <ul className="space-y-2">
@@ -60,7 +60,7 @@ export default function TechnologyMedia() {
         </div>
       </section>
 
-      <section className="bg-bone py-24 border-b border-ink/10">
+      <section className="horizontal-story-section bg-bone py-24 border-b border-ink/10 overflow-hidden">
         <div className="container">
           <div className="mb-16 text-center">
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Indicative Experience</h2>
@@ -69,14 +69,14 @@ export default function TechnologyMedia() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div data-horizontal-scroll className="experience-rail">
             {[
               { t: "Global OTT Platform: Content Acquisition", d: "Advised a leading international OTT platform on the acquisition and licensing of a major Indian film library, handling extensive IP chain-of-title diligence and drafting complex syndication agreements." },
               { t: "Real-Money Gaming Operator: Regulatory Structuring", d: "Structured the operational and legal framework for a prominent Indian fantasy sports and rummy operator, providing state-by-state risk assessments and representing the entity in regulatory inquiries." },
               { t: "Fintech Startup: RBI PA Guidelines", d: "Guided a rapidly growing fintech platform through the Reserve Bank of India’s Payment Aggregator licensing process, including overhauling their merchant onboarding agreements and data localization compliance." },
               { t: "IP Protection: FMCG Brand Portfolio", d: "Managed the complete trademark portfolio for a legacy Indian FMCG brand across 15+ jurisdictions, successfully prosecuting multiple infringement actions against counterfeiters." },
             ].map((exp, i) => (
-              <div key={i} className="border-t border-ink/10 pt-6">
+              <div key={i} data-depth-card className="border-t border-ink/10 pt-6">
                 <h3 className="font-serif text-xl text-ink mb-2">— {exp.t}</h3>
                 <p className="text-ink/75 leading-relaxed">{exp.d}</p>
               </div>

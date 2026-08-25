@@ -40,7 +40,7 @@ export const Nav = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     // GSAP ScrollTrigger Theme Detection (works with pins and horizontal scroll)
-    const elements = document.querySelectorAll('[data-theme]');
+    const elements = document.querySelectorAll('main section, main [data-theme]');
     const triggers: ScrollTrigger[] = [];
     
     if (elements.length > 0) {
@@ -49,8 +49,8 @@ export const Nav = () => {
           trigger: el,
           start: "top 80px", // Trigger when top of section hits bottom of 80px navbar
           end: "bottom 80px",
-          onEnter: () => setIsDarkBg(el.getAttribute('data-theme') === 'dark'),
-          onEnterBack: () => setIsDarkBg(el.getAttribute('data-theme') === 'dark'),
+          onEnter: () => setIsDarkBg(el.getAttribute('data-theme') === 'dark' || el.classList.contains('bg-ink') || el.classList.contains('bg-graphite') || el.classList.contains('bg-black')),
+          onEnterBack: () => setIsDarkBg(el.getAttribute('data-theme') === 'dark' || el.classList.contains('bg-ink') || el.classList.contains('bg-graphite') || el.classList.contains('bg-black')),
         });
         triggers.push(trigger);
       });

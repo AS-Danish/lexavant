@@ -43,7 +43,7 @@ export default function DataPrivacy() {
               { title: "Data Breach & Incident Response", desc: "Rapid response and regulatory management during cybersecurity incidents.", items: ["Incident response strategy and CERT-In reporting compliance", "Regulatory interface and mandatory notifications", "Managing user communications and potential liability claims", "Post-breach compliance audits and remediation advisory"] },
               { title: "Privacy in Emerging Technologies", desc: "Navigating data risks in AI, blockchain, and digital health.", items: ["Privacy-by-design advisory for new software and app development", "Data scraping, web crawling, and AI training data compliance", "Healthcare data protection and telemedicine guidelines", "Financial data privacy and Account Aggregator framework advisory"] },
             ].map((cap, i) => (
-              <div key={i} className="border-t border-bone/15 pt-6">
+              <div key={i} data-depth-card className="capability-card border-t border-bone/15 pt-6">
                 <h3 className="font-serif text-xl text-gold mb-2">▪ {cap.title}</h3>
                 <p className="text-sm italic text-bone/60 mb-4">{cap.desc}</p>
                 <ul className="space-y-2">
@@ -59,7 +59,7 @@ export default function DataPrivacy() {
         </div>
       </section>
 
-      <section className="bg-bone py-24 border-b border-ink/10">
+      <section className="horizontal-story-section bg-bone py-24 border-b border-ink/10 overflow-hidden">
         <div className="container">
           <div className="mb-16 text-center">
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Indicative Experience</h2>
@@ -68,13 +68,13 @@ export default function DataPrivacy() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div data-horizontal-scroll className="experience-rail">
             {[
               { t: "Multinational SaaS Provider: Global Compliance", d: "Advised a US-headquartered SaaS company on aligning its Indian operations and customer agreements with the upcoming Digital Personal Data Protection Act, including drafting localized DPAs." },
               { t: "Healthcare Platform: Health Data Regulations", d: "Guided a digital health startup through the compliance requirements for handling sensitive personal health data, ensuring alignment with both Ministry of Health guidelines and data protection laws." },
               { t: "Financial Institution: Incident Response", d: "Acted as counsel for a non-banking financial company during a suspected data breach, managing CERT-In reporting obligations and subsequent regulatory inquiries." },
             ].map((exp, i) => (
-              <div key={i} className="border-t border-ink/10 pt-6">
+              <div key={i} data-depth-card className="border-t border-ink/10 pt-6">
                 <h3 className="font-serif text-xl text-ink mb-2">— {exp.t}</h3>
                 <p className="text-ink/75 leading-relaxed">{exp.d}</p>
               </div>

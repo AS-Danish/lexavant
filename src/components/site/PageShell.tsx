@@ -4,6 +4,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { Nav } from "@/components/site/Nav";
 import { Newsletter } from "@/components/site/Newsletter";
 import { Footer } from "@/components/site/Footer";
+import { InnerPageMotion } from "@/components/site/InnerPageMotion";
 
 export const PageShell = ({ children, hideNewsletter = false }: { children: ReactNode; hideNewsletter?: boolean }) => {
   const scope = useReveal();
@@ -14,7 +15,8 @@ export const PageShell = ({ children, hideNewsletter = false }: { children: Reac
   }, [pathname]);
 
   return (
-    <div ref={scope} className="bg-bone text-ink min-h-screen overflow-x-hidden">
+    <div ref={scope} className="modern-shell bg-bone text-ink min-h-screen overflow-x-clip">
+      <InnerPageMotion />
       <Nav />
       <main>
         {children}

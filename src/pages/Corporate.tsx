@@ -50,7 +50,7 @@ export default function Corporate() {
               { title: "Competition / Anti-trust", desc: "Combination notifications and competition-compliance support.", items: ["Merger-control filings before the Competition Commission of India (CCI), including under the Green Channel and the deal-value threshold", "Pre-notification structuring, jurisdictional and exemption analysis under the Combination Regulations", "Vertical and horizontal-restraint advisory under Sections 3 and 4 of the Competition Act, 2002", "Competition-compliance programmes, training and dawn-raid readiness"] },
               { title: "Additional Areas of Practice", desc: "Specialised mandates I take on, often integrated with corporate and M&A work.", items: ["Stamp duty and transaction structuring across States, including instrument design and exemptions", "International compliance and anti-corruption advisory, including extraterritorial exposure under regimes such as France's Loi Sapin II", "Education-sector advisory and investment structuring under the UGC framework and State legislation", "Energy and project advisory under the Electricity Act, 2003, including solar and renewable-energy projects", "Trust law, charitable-trust governance and Charity Commissioner interfaces", "Tax structuring on transactions, including capital-gains, withholding and stamp interplay", "Bank-guarantee, limitation-period and Section 28 (Contract Act) analysis on commercial documentation"] },
             ].map((cap, i) => (
-              <div key={i} className="border-t border-bone/15 pt-6">
+              <div key={i} data-depth-card className="capability-card border-t border-bone/15 pt-6">
                 <h3 className="font-serif text-xl text-gold mb-2">▪ {cap.title}</h3>
                 <p className="text-sm italic text-bone/60 mb-4">{cap.desc}</p>
                 <ul className="space-y-2">
@@ -66,7 +66,7 @@ export default function Corporate() {
         </div>
       </section>
 
-      <section className="bg-bone py-24 border-b border-ink/10">
+      <section className="horizontal-story-section bg-bone py-24 border-b border-ink/10 overflow-hidden">
         <div className="container">
           <div className="mb-16 text-center">
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-6">Indicative Experience</h2>
@@ -75,7 +75,7 @@ export default function Corporate() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div data-horizontal-scroll className="experience-rail">
             {[
               { t: "Capital Markets: Listed Telecom Issuer", d: "Advised a listed telecom service provider on its equity fund-raise of approximately INR 18,000 crores by way of a further issue of equity shares, including structuring, SEBI (ICDR) and (LODR) compliance, documentation and stock-exchange interface." },
               { t: "Foreign Direct Investment: Single-Brand Retail", d: "Advised a French multinational on the proposed increase in shareholding of its Indian joint venture engaged in single-brand retail trading, covering FDI policy, sectoral conditions, pricing guidelines and FEMA reporting." },
@@ -91,7 +91,7 @@ export default function Corporate() {
               { t: "Employment: KMP Disciplinary Inquiry", d: "Advised a key managerial personnel of one of India's largest banks on internal disciplinary proceedings for allegations of major misconduct." },
               { t: "Employment: Senior-Executive Contracts", d: "Advised the Indian subsidiaries of two Danish-headquartered conglomerates on employment agreements with their country manager and regional head." },
             ].map((exp, i) => (
-              <div key={i} className="border-t border-ink/10 pt-6">
+              <div key={i} data-depth-card className="border-t border-ink/10 pt-6">
                 <h3 className="font-serif text-xl text-ink mb-2">— {exp.t}</h3>
                 <p className="text-ink/75 leading-relaxed">{exp.d}</p>
               </div>

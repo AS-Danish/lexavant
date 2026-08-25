@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
-import { Newsletter } from "@/components/site/Newsletter";
 import { ArrowUpRight } from "lucide-react";
 
 const articles = [
@@ -55,7 +54,7 @@ const articles = [
   }
 ];
 
-const categories = ["All", "Litigation & Disputes", "Corporate & M&A", "Technology & Data", "Media & Entertainment", "Private Client", "Regulatory", "International"];
+const categories = ["All", "Legal Updates", "Firm News", "Articles & Opinions"];
 
 export default function KnowledgeHub() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -94,9 +93,9 @@ export default function KnowledgeHub() {
           </div>
 
           {/* Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16">
-            {filteredArticles.map((article) => (
-              <article key={article.id} className="group cursor-pointer flex flex-col h-full">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 gap-y-14" data-stagger>
+            {filteredArticles.map((article, index) => (
+              <article key={article.id} data-stagger-item data-depth-card className={`insight-card group cursor-pointer flex flex-col h-full rounded-2xl border border-ink/10 bg-bone/70 p-3 shadow-soft backdrop-blur-sm ${index === 0 && activeCategory === "All" ? "md:col-span-2" : ""}`}>
                 <div className="mb-4 overflow-hidden rounded-sm aspect-[1.6/1] bg-ink/5 relative border border-ink/5">
                   <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop" alt="Article placeholder" className="absolute inset-0 w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" />
                   <div className="absolute inset-0 bg-ink/5 group-hover:bg-transparent transition-colors duration-500" />
@@ -105,21 +104,21 @@ export default function KnowledgeHub() {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mb-4">
+                <div className="flex items-center gap-3 px-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 mb-4">
                   <span>{article.date}</span>
                   <span className="w-1 h-1 rounded-full bg-gold"></span>
                   <span className="text-gold-deep">{article.practice}</span>
                 </div>
                 
-                <h3 className="font-serif text-2xl text-ink mb-4 leading-snug group-hover:text-gold-deep transition-colors duration-300">
+                <h3 className={`${index === 0 && activeCategory === "All" ? "md:text-4xl" : "text-2xl"} px-2 font-serif text-ink mb-4 leading-snug group-hover:text-gold-deep transition-colors duration-300`}>
                   {article.title}
                 </h3>
                 
-                <p className="text-ink/70 leading-relaxed text-sm mb-6 flex-grow">
+                <p className="px-2 text-ink/70 leading-relaxed text-sm mb-6 flex-grow">
                   {article.excerpt}
                 </p>
                 
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40 mt-auto border-t border-ink/10 pt-4">
+                <div className="mx-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40 mt-auto border-t border-ink/10 py-4">
                   {article.category}
                 </div>
               </article>
@@ -129,7 +128,6 @@ export default function KnowledgeHub() {
         </div>
       </section>
 
-      <Newsletter />
     </PageShell>
   );
 }

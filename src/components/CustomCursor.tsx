@@ -51,12 +51,12 @@ export const CustomCursor = () => {
     // Hover effects on links/buttons
     const onMouseEnterLink = () => {
       gsap.to(dot, { scale: 1.5, duration: 0.3, ease: "power2.out" });
-      gsap.to(ring, { scale: 1.8, borderColor: "rgba(249, 115, 22, 0.4)", duration: 0.3, ease: "power2.out" });
+      gsap.to(ring, { scale: 1.8, borderColor: "rgba(179, 148, 86, 0.65)", duration: 0.3, ease: "power2.out" });
     };
 
     const onMouseLeaveLink = () => {
       gsap.to(dot, { scale: 1, duration: 0.3, ease: "power2.out" });
-      gsap.to(ring, { scale: 1, borderColor: "rgba(249, 115, 22, 0.2)", duration: 0.3, ease: "power2.out" });
+      gsap.to(ring, { scale: 1, borderColor: "rgba(179, 148, 86, 0.28)", duration: 0.3, ease: "power2.out" });
     };
 
     // Use event delegation on the document
@@ -92,12 +92,12 @@ export const CustomCursor = () => {
     <>
       <div 
         ref={ringRef} 
-        className="pointer-events-none fixed top-0 left-0 z-[10000] h-10 w-10 rounded-full border border-[#f97316]/30 hidden md:block"
+        className="pointer-events-none fixed top-0 left-0 z-[10000] h-10 w-10 rounded-full border border-gold/30 hidden md:block mix-blend-difference"
         style={{ transform: "translate(-50%, -50%)" }}
       />
       <div 
         ref={dotRef} 
-        className="pointer-events-none fixed top-0 left-0 z-[10000] h-2 w-2 rounded-full bg-[#f97316] shadow-[0_0_10px_rgba(249,115,22,0.6)] hidden md:block"
+        className="pointer-events-none fixed top-0 left-0 z-[10000] h-2 w-2 rounded-full bg-gold shadow-[0_0_12px_rgba(179,148,86,0.7)] hidden md:block"
         style={{ transform: "translate(-50%, -50%)" }}
       />
     </>
